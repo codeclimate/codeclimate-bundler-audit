@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), "../lib")))
+
+require 'cc/engine/bundler_audit'
+
+def parse_engine_config(raw)
+  raw ? JSON.parse(raw) : {}
+end
+engine_config = parse_engine_config(ENV['ENGINE_CONFIG'])
+CC::Engine::BundlerAudit.new(
+  directory: "/code", engine_config: engine_config, io: STDOUT
+).run
