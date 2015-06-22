@@ -11,21 +11,33 @@ module CC
       end
 
       def run
-        Dir.chdir(@directory)
-        raw_output = `bundle-audit`
-        raw_issues = raw_output.split(/\n\n/).select { |chunk| 
-          chunk =~ /^Name: /
-        }
-        @gemfile_lock_lines = File.read(
-          File.join(@directory, 'Gemfile.lock')
-        ).lines
-        raw_issues.each do |raw_issue|
-          issue = issue_from_raw(raw_issue)
-          @io.print("#{issue.to_json}\0")
+        if gemfile_lock_exists?
+          Dir.chdir(@directory)
+          raw_output = `bundle-audit`
+          raw_issues = raw_output.split(/\n\n/).select { |chunk|
+            chunk =~ /^Name: /
+          }
+          @gemfile_lock_lines = File.read(
+            File.join(@directory, 'Gemfile.lock')
+          ).lines
+          raw_issues.each do |raw_issue|
+            issue = issue_from_raw(raw_issue)
+            @io.print("#{issue.to_json}\0")
+          end
+        else
+          warning = {
+            type: "warning",
+            description: "No Gemfile.lock file found"
+          }
+          @io.print("#{warning.to_json}\0")
         end
       end
 
       private
+
+      def gemfile_lock_exists?
+        File.exist?(File.join(@directory, 'Gemfile.lock'))
+      end
 
       def issue_from_raw(raw_issue)
         raw_issue_hash = {}
