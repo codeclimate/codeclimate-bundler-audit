@@ -101,7 +101,7 @@ module CC
 
       def content_body(raw_issue_hash)
         %w[Advisory Criticality URL Solution].map do |key|
-          "#{key}: #{raw_issue_hash[key]}"
+          "**#{key}**: #{raw_issue_hash[key]}"
         end.join("\n\n")
       end
     end

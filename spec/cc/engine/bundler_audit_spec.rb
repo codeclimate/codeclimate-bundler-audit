@@ -37,7 +37,7 @@ Solution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13
             lines: { begin: nil, end: nil }
           },
           content: {
-            body: "Advisory: OSVDB-91452\n\nCriticality: Medium\n\nURL: http://www.osvdb.org/show/osvdb/91452\n\nSolution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13"
+            body: "**Advisory**: OSVDB-91452\n\n**Criticality**: Medium\n\n**URL**: http://www.osvdb.org/show/osvdb/91452\n\n**Solution**: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13"
           },
         }.to_json
         io = StringIO.new
