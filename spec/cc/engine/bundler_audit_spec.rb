@@ -31,7 +31,7 @@ Solution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13
           check_name: "Insecure Dependency",
           description: "XSS vulnerability in sanitize_css in Action Pack",
           categories: ["Security"],
-          remediation_points: 500000,
+          remediation_points: 500_000,
           location: {
             path: "Gemfile.lock",
             lines: { begin: nil, end: nil }
