@@ -65,6 +65,9 @@ module CC
               begin: line_number,
               end: line_number
             }
+          },
+          content: {
+            body: content_body(raw_issue_hash)
           }
         }
       end
@@ -94,6 +97,12 @@ module CC
         else
           500_000_000 # No upgrade of gem possible
         end
+      end
+
+      def content_body(raw_issue_hash)
+        %w[Advisory Criticality URL Solution].map do |key|
+          "#{key}: #{raw_issue_hash[key]}"
+        end.join("\n\n")
       end
     end
   end
