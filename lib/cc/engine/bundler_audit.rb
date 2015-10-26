@@ -4,6 +4,8 @@ require 'versionomy'
 module CC
   module Engine
     class BundlerAudit
+      GemfileLockNotFound = Class.new(StandardError)
+
       def initialize(directory: , io: , engine_config: )
         @directory = directory
         @engine_config = engine_config
@@ -25,11 +27,7 @@ module CC
             @io.print("#{issue.to_json}\0")
           end
         else
-          warning = {
-            type: "warning",
-            description: "No Gemfile.lock file found"
-          }
-          @io.print("#{warning.to_json}\0")
+          raise GemfileLockNotFound, "No Gemfile.lock found."
         end
       end
 
