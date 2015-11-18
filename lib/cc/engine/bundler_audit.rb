@@ -15,7 +15,7 @@ module CC
       def run
         if gemfile_lock_exists?
           Dir.chdir(@directory)
-          raw_output = `bundle-audit`
+          raw_output = `bundle-audit check --update`
           raw_issues = raw_output.split(/\n\n/).select { |chunk|
             chunk =~ /^Name: /
           }
