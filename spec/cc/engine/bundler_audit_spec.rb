@@ -26,18 +26,18 @@ Title: XSS vulnerability in sanitize_css in Action Pack
 Solution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13
         EOF
         result = {
-          type: "Issue",
-          check_name: "Insecure Dependency",
-          description: "XSS vulnerability in sanitize_css in Action Pack",
           categories: ["Security"],
-          remediation_points: 500_000,
+          check_name: "Insecure Dependency",
+          content: {
+            body: "**Advisory**: OSVDB-91452\n\n**Criticality**: Medium\n\n**URL**: http://www.osvdb.org/show/osvdb/91452\n\n**Solution**: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13"
+          },
+          description: "XSS vulnerability in sanitize_css in Action Pack",
           location: {
             path: "Gemfile.lock",
             lines: { begin: nil, end: nil }
           },
-          content: {
-            body: "**Advisory**: OSVDB-91452\n\n**Criticality**: Medium\n\n**URL**: http://www.osvdb.org/show/osvdb/91452\n\n**Solution**: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13"
-          },
+          remediation_points: 500_000,
+          type: "Issue",
         }.to_json
         io = StringIO.new
         directory = "/c"
@@ -54,7 +54,7 @@ Solution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13
           audit.run
         end
 
-        expect(io.string).to match("#{result}\0")
+        expect(io.string).to eq("#{result}\0")
       end
     end
   end
