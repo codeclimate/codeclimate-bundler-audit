@@ -37,6 +37,7 @@ Solution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13
             lines: { begin: nil, end: nil }
           },
           remediation_points: 500_000,
+          severity: "normal",
           type: "Issue",
         }.to_json
         io = StringIO.new
