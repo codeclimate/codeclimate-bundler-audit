@@ -5,6 +5,11 @@ module CC
   module Engine
     class BundlerAudit
       GemfileLockNotFound = Class.new(StandardError)
+      SEVERITIES = {
+        "High" => "critical",
+        "Low" => "info",
+        "Medium" => "normal",
+      }
 
       def initialize(directory: , io: , engine_config: )
         @directory = directory
@@ -50,13 +55,12 @@ module CC
           end
         end
         {
-          type: 'Issue',
-          check_name: "Insecure Dependency",
-          description: raw_issue_hash['Title'],
           categories: ['Security'],
-          remediation_points: remediation_points(
-            raw_issue_hash['Version'], raw_issue_hash['Solution']
-          ),
+          check_name: "Insecure Dependency",
+          content: {
+            body: content_body(raw_issue_hash)
+          },
+          description: raw_issue_hash['Title'],
           location: {
             path: 'Gemfile.lock',
             lines: {
@@ -64,9 +68,11 @@ module CC
               end: line_number
             }
           },
-          content: {
-            body: content_body(raw_issue_hash)
-          }
+          remediation_points: remediation_points(
+            raw_issue_hash['Version'], raw_issue_hash['Solution']
+          ),
+          severity: SEVERITIES[raw_issue_hash["Criticality"]],
+          type: 'Issue',
         }
       end
 
