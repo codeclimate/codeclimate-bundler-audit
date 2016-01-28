@@ -1,4 +1,4 @@
-FROM mhart/alpine-node
+FROM codeclimate/alpine-ruby:b38
 
 WORKDIR /usr/src/app
 RUN apk --update add ruby ruby-dev ruby-bundler build-base git
