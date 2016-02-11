@@ -1,21 +1,21 @@
 require "spec_helper"
 
-module CC::Engine
-  describe BundlerAudit do
+module CC::Engine::BundlerAudit
+  describe Analyzer do
     describe "#run" do
       it "raises an error when no Gemfile.lock exists" do
         directory = File.join(Dir.pwd, "spec", "fixtures", "no_gemfile_lock")
         io = StringIO.new
 
-        expect { BundlerAudit.new(directory: directory, io: io, engine_config: {}).run }
-          .to raise_error(CC::Engine::BundlerAudit::GemfileLockNotFound)
+        expect { Analyzer.new(directory: directory, io: io, engine_config: {}).run }
+          .to raise_error(Analyzer::GemfileLockNotFound)
       end
 
       it "emits issues for Gemfile.lock problems" do
         io = StringIO.new
         directory = File.join(Dir.pwd, "spec", "fixtures", "unpatched_versions")
 
-        audit = BundlerAudit.new(directory: directory, io: io, engine_config: {})
+        audit = Analyzer.new(directory: directory, io: io, engine_config: {})
         audit.run
 
         issues = io.string.split("\0").map { |issue| JSON.load(issue) }
