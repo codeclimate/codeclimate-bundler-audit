@@ -40,11 +40,8 @@ module CC
         end
 
         def upgrade_versions
-          @upgrade_versions ||= patched_versions.map do |gem_requirement|
-            requirements = Gem::Requirement.parse(gem_requirement)
-            unqualified_version = requirements.last
-
-            Versionomy.parse(unqualified_version.to_s)
+          @upgrade_versions ||= patched_versions.map do |version|
+            Versionomy.parse(version.to_s)
           end
         end
       end
