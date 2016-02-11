@@ -1,7 +1,7 @@
 module CC
   module Engine
     module BundlerAudit
-      class Result
+      class Issue
         GEM_REGEX = /^\s*(?<name>\S+) \([\d.]+\)/.freeze
         SEVERITIES = {
           high: "critical",
@@ -15,7 +15,7 @@ module CC
           @gemfile_lock_lines = gemfile_lock_lines
         end
 
-        def to_issue
+        def to_json(*a)
           {
             categories: ["Security"],
             check_name: "Insecure Dependency",
@@ -33,7 +33,7 @@ module CC
             remediation_points: remediation_points,
             severity: severity,
             type: "Issue",
-          }
+          }.to_json(a)
         end
 
         private

@@ -13,8 +13,7 @@ module CC
           if gemfile_lock_exists?
             Dir.chdir(directory) do
               Bundler::Audit::Scanner.new.scan do |vulnerability|
-                result = Result.new(vulnerability, gemfile_lock_lines)
-                issue = result.to_issue
+                issue = Issue.new(vulnerability, gemfile_lock_lines)
 
                 io.print("#{issue.to_json}\0")
               end

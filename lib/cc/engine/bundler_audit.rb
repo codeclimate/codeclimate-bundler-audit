@@ -3,8 +3,8 @@ require "json"
 require "versionomy"
 
 require "cc/engine/bundler_audit/analyzer"
+require "cc/engine/bundler_audit/issue"
 require "cc/engine/bundler_audit/remediation"
-require "cc/engine/bundler_audit/result"
 
 module CC
   module Engine
