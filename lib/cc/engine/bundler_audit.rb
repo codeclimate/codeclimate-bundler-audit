@@ -1,5 +1,4 @@
 require "bundler/audit/scanner"
-require "forwardable"
 require "json"
 require "versionomy"
 

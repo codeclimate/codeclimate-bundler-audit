@@ -9,8 +9,6 @@ module CC
           low: "info",
         }.freeze
 
-        extend Forwardable
-
         def initialize(result, gemfile_lock)
           @gem = result.gem
           @advisory = result.advisory
