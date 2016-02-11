@@ -4,10 +4,9 @@ module CC
       class Analyzer
         GemfileLockNotFound = Class.new(StandardError)
 
-        def initialize(directory:, io: STDOUT, engine_config: {})
+        def initialize(directory:, io: STDOUT)
           @directory = directory
           @io = io
-          @engine_config = engine_config
         end
 
         def run
