@@ -42,14 +42,11 @@ module CC
 
         attr_reader :advisory, :gem, :gemfile_lock
 
-        def_delegators :gem, :name, :version
-        def_delegators :advisory, :criticality, :title, :cve, :patched_versions, :url
-
         def content_body
           [
             "**Advisory**: #{identifier}",
-            "**Criticality**: #{criticality.capitalize}",
-            "**URL**: #{url}",
+            "**Criticality**: #{advisory.criticality.capitalize}",
+            "**URL**: #{advisory.url}",
             "**Solution**: #{solution}",
           ].join("\n\n")
         end
@@ -57,35 +54,22 @@ module CC
         def line_number
           @line_number ||= begin
              gemfile_lock.find_index do |line|
-               (match = GEM_REGEX.match(line)) && match[:name] == name
+               (match = GEM_REGEX.match(line)) && match[:name] == gem.name
              end + 1
           end
         end
 
         def remediation_points
-          if patched_versions.any?
-            upgrade_versions.map do |upgrade_version|
-              case
-              when current_version.major != upgrade_version.major
-                50_000_000
-              when current_version.minor != upgrade_version.minor
-                5_000_000
-              when current_version.tiny != upgrade_version.tiny
-                500_000
-              end
-            end.min
-          else
-            500_000_000
-          end
+          Remediation.new(gem.version, advisory.patched_versions).points
         end
 
         def severity
-          SEVERITIES[criticality]
+          SEVERITIES[advisory.criticality]
         end
 
         def solution
-          if patched_versions.any?
-            "upgrade to #{patched_versions.join(', ')}"
+          if advisory.patched_versions.any?
+            "upgrade to #{advisory.patched_versions.join(', ')}"
           else
             "remove or disable this gem until a patch is available!"
           end
@@ -93,21 +77,8 @@ module CC
 
         def identifier
           case
-          when cve then "CVE-#{cve}"
-          when osvdb then osvdb
-          end
-        end
-
-        def current_version
-          Versionomy.parse(version.to_s)
-        end
-
-        def upgrade_versions
-          patched_versions.map do |gem_requirement|
-            requirements = Gem::Requirement.parse(gem_requirement)
-            unqualified_version = requirements.last
-
-            Versionomy.parse(unqualified_version.to_s)
+          when advisory.cve then "CVE-#{advisory.cve}"
+          when advisory.osvdb then advisory.osvdb
           end
         end
       end
