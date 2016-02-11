@@ -11,5 +11,6 @@ else
 end
 
 CC::Engine::BundlerAudit::Analyzer.new(
-  directory: "/code", engine_config: engine_config, io: STDOUT
+  directory: "/code",
+  engine_config: engine_config
 ).run
