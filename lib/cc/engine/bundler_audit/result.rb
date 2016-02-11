@@ -9,10 +9,10 @@ module CC
           low: "info",
         }.freeze
 
-        def initialize(result, gemfile_lock)
+        def initialize(result, gemfile_lock_lines)
           @gem = result.gem
           @advisory = result.advisory
-          @gemfile_lock = gemfile_lock
+          @gemfile_lock_lines = gemfile_lock_lines
         end
 
         def to_issue
@@ -38,7 +38,7 @@ module CC
 
         private
 
-        attr_reader :advisory, :gem, :gemfile_lock
+        attr_reader :advisory, :gem, :gemfile_lock_lines
 
         def content_body
           [
@@ -51,7 +51,7 @@ module CC
 
         def line_number
           @line_number ||= begin
-             gemfile_lock.find_index do |line|
+             gemfile_lock_lines.find_index do |line|
                (match = GEM_REGEX.match(line)) && match[:name] == gem.name
              end + 1
           end
