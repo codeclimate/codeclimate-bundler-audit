@@ -7,5 +7,4 @@ gem "rake"
 
 group :test do
   gem "rspec", require: false
-  gem "fakefs", require: false
 end

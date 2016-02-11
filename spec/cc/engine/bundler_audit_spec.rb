@@ -4,58 +4,29 @@ module CC::Engine
   describe BundlerAudit do
     describe "#run" do
       it "raises an error when no Gemfile.lock exists" do
-        FakeFS do
-          directory = "/c"
-          FileUtils.mkdir_p(directory)
-          io = StringIO.new
-          config = {}
+        directory = File.join(Dir.pwd, "spec", "fixtures", "no_gemfile_lock")
+        io = StringIO.new
 
-          expect { BundlerAudit.new(directory: directory, io: io, engine_config: config).run }
-            .to raise_error(CC::Engine::BundlerAudit::GemfileLockNotFound)
-        end
+        expect { BundlerAudit.new(directory: directory, io: io, engine_config: {}).run }
+          .to raise_error(CC::Engine::BundlerAudit::GemfileLockNotFound)
       end
 
       it "emits issues for Gemfile.lock problems" do
-        bundle_audit_output = <<-EOF
-Name: actionpack
-Version: 3.2.10
-Advisory: OSVDB-91452
-Criticality: Medium
-URL: http://www.osvdb.org/show/osvdb/91452
-Title: XSS vulnerability in sanitize_css in Action Pack
-Solution: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13
-        EOF
-        result = {
-          categories: ["Security"],
-          check_name: "Insecure Dependency",
-          content: {
-            body: "**Advisory**: OSVDB-91452\n\n**Criticality**: Medium\n\n**URL**: http://www.osvdb.org/show/osvdb/91452\n\n**Solution**: upgrade to ~> 2.3.18, ~> 3.1.12, >= 3.2.13"
-          },
-          description: "XSS vulnerability in sanitize_css in Action Pack",
-          location: {
-            path: "Gemfile.lock",
-            lines: { begin: nil, end: nil }
-          },
-          remediation_points: 500_000,
-          severity: "normal",
-          type: "Issue",
-        }.to_json
         io = StringIO.new
-        directory = "/c"
-        config = {}
+        directory = File.join(Dir.pwd, "spec", "fixtures", "unpatched_versions")
 
-        FakeFS do
-          FileUtils.mkdir_p(directory)
-          FileUtils.touch("/c/Gemfile.lock")
+        audit = BundlerAudit.new(directory: directory, io: io, engine_config: {})
+        audit.run
 
-          audit = BundlerAudit.new(directory: directory, io: io, engine_config: config)
+        issues = io.string.split("\0").map { |issue| JSON.load(issue) }
 
-          allow(audit).to receive(:`).and_return(bundle_audit_output)
+        expect(issues).to eq(expected_issues("unpatched_versions"))
+      end
 
-          audit.run
-        end
-
-        expect(io.string).to eq("#{result}\0")
+      def expected_issues(fixture)
+        path = File.join(Dir.pwd, "spec", "fixtures", fixture, "issues.json")
+        body = File.read(path)
+        JSON.load(body)
       end
     end
   end
