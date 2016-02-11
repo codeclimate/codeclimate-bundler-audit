@@ -42,4 +42,3 @@ module CC
     end
   end
 end
-

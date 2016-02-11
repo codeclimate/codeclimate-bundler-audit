@@ -2,11 +2,11 @@ module CC
   module Engine
     module BundlerAudit
       class Issue
-        GEM_REGEX = /^\s*(?<name>\S+) \([\d.]+\)/.freeze
+        GEM_REGEX = /^\s*(?<name>\S+) \([\d.]+\)/
         SEVERITIES = {
           high: "critical",
           medium: "normal",
-          low: "info",
+          low: "info"
         }.freeze
 
         def initialize(result, gemfile_lock_lines)
@@ -17,7 +17,7 @@ module CC
 
         def to_json(*a)
           {
-            categories: ["Security"],
+            categories: %w[Security],
             check_name: "Insecure Dependency",
             content: {
               body: content_body
@@ -32,7 +32,7 @@ module CC
             },
             remediation_points: remediation_points,
             severity: severity,
-            type: "Issue",
+            type: "Issue"
           }.to_json(a)
         end
 
@@ -45,15 +45,15 @@ module CC
             "**Advisory**: #{identifier}",
             "**Criticality**: #{advisory.criticality.capitalize}",
             "**URL**: #{advisory.url}",
-            "**Solution**: #{solution}",
+            "**Solution**: #{solution}"
           ].join("\n\n")
         end
 
         def line_number
           @line_number ||= begin
-             gemfile_lock_lines.find_index do |line|
-               (match = GEM_REGEX.match(line)) && match[:name] == gem.name
-             end + 1
+            gemfile_lock_lines.find_index do |line|
+              (match = GEM_REGEX.match(line)) && match[:name] == gem.name
+            end + 1
           end
         end
 
