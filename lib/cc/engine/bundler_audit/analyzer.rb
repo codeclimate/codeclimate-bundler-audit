@@ -14,7 +14,7 @@ module CC
           if gemfile_lock_exists?
             Dir.chdir(directory) do
               Bundler::Audit::Scanner.new.scan do |vulnerability|
-                if issue = issue_for_vulerability(vulnerability)
+                if (issue = issue_for_vulerability(vulnerability))
                   stdout.print("#{issue.to_json}\0")
                 else
                   stderr.print("Unsupported vulnerability: #{vulnerability.class.name}")

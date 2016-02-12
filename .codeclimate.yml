@@ -13,8 +13,12 @@ engines:
   rubocop:
     enabled: true
     exclude_fingerprints:
-    # Ignoring long method length for Issue#to_json
-    - 3d618821b1ce28599d6c54f90bb4df59
+    # Ignoring long method length for Analyzer#run
+    - b18e3ac8a9b02f26a0b769f67d758761
+    # Ignoring long method length for UnpatchedGemIssue#to_json
+    - 60d15e0a35747ad1c4a7dfe29301f3bd
+    # Ignoring long method length for InsecureSourceIssue#to_json
+    - f861a7b796b8b07217f4a75db9bb631d
 ratings:
   paths:
   - "**.rb"
