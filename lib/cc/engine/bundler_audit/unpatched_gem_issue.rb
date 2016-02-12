@@ -41,12 +41,12 @@ module CC
         attr_reader :advisory, :gem, :gemfile_lock_lines
 
         def content_body
-          [
-            "**Advisory**: #{identifier}",
-            "**Criticality**: #{advisory.criticality.capitalize}",
-            "**URL**: #{advisory.url}",
-            "**Solution**: #{solution}",
-          ].join("\n\n")
+          lines = ["**Advisory**: #{identifier}"]
+          lines << "**Criticality**: #{advisory.criticality.capitalize}" if advisory.criticality
+          lines << "**URL**: #{advisory.url}"
+          lines << "**Solution**: #{solution}"
+
+          lines.join("\n\n")
         end
 
         def line_number
