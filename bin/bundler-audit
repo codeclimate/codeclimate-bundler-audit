@@ -4,12 +4,4 @@ $LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), "../lib"))
 
 require 'cc/engine/bundler_audit'
 
-if File.exists?("/config.json")
-  engine_config = JSON.parse(File.read("/config.json"))
-else
-  engine_config = {}
-end
-
-CC::Engine::BundlerAudit.new(
-  directory: "/code", engine_config: engine_config, io: STDOUT
-).run
+CC::Engine::BundlerAudit::Analyzer.new(directory: "/code").run

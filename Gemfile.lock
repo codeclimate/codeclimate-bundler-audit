@@ -1,12 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    blockenspiel (0.4.5)
+    blockenspiel (0.5.0)
     bundler-audit (0.4.0)
       bundler (~> 1.2)
       thor (~> 0.18)
     diff-lcs (1.2.5)
-    fakefs (0.6.7)
     json (1.8.3)
     rake (10.4.2)
     rspec (3.3.0)
@@ -23,19 +22,18 @@ GEM
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
     thor (0.19.1)
-    versionomy (0.4.4)
-      blockenspiel (>= 0.4.5)
+    versionomy (0.5.0)
+      blockenspiel (~> 0.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler-audit
-  fakefs
-  json
+  bundler-audit (~> 0.4.0)
+  json (~> 1.8.3)
   rake
   rspec
-  versionomy
+  versionomy (~> 0.5.0)
 
 BUNDLED WITH
    1.11.2

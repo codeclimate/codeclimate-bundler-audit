@@ -1,6 +1,9 @@
 engines:
   rubocop:
     enabled: true
+    exclude_fingerprints:
+    # Ignoring long method length for Issue#to_json
+    - 3d618821b1ce28599d6c54f90bb4df59
 ratings:
   paths:
   - "**.rb"

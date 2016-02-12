@@ -1,0 +1,22 @@
+[
+    {
+        "categories": [
+            "Security"
+        ],
+        "check_name": "Insecure Dependency",
+        "content": {
+            "body": "**Advisory**: CVE-2013-1800\n\n**Criticality**: High\n\n**URL**: http://osvdb.org/show/osvdb/90742\n\n**Solution**: upgrade to >= 0.3.2"
+        },
+        "description": "crack Gem for Ruby Type Casting Parameter Parsing Remote Code Execution",
+        "location": {
+            "path": "Gemfile.lock",
+            "lines": {
+                "begin": 87,
+                "end": 87
+            }
+        },
+        "remediation_points": 500000,
+        "severity": "critical",
+        "type": "Issue"
+    }
+]
