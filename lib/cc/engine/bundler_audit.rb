@@ -13,3 +13,12 @@ module CC
     end
   end
 end
+
+# Patch Bundler::Audit::Scanner to prevent network access during insecure
+# source checks
+
+Bundler::Audit::Scanner.module_eval do
+  def internal_host?(_uri)
+    false
+  end
+end
