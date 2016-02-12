@@ -7,8 +7,8 @@ module CC::Engine::BundlerAudit
         directory = fixture_directory("no_gemfile_lock")
         io = StringIO.new
 
-        expect { Analyzer.new(directory: directory, io: io).run }
-          .to raise_error(Analyzer::GemfileLockNotFound)
+        expect { Analyzer.new(directory: directory, io: io).run }.
+          to raise_error(Analyzer::GemfileLockNotFound)
       end
 
       it "emits issues for Gemfile.lock problems" do

@@ -6,7 +6,7 @@ module CC
         SEVERITIES = {
           high: "critical",
           medium: "normal",
-          low: "info"
+          low: "info",
         }.freeze
 
         def initialize(result, gemfile_lock_lines)
@@ -20,19 +20,19 @@ module CC
             categories: %w[Security],
             check_name: "Insecure Dependency",
             content: {
-              body: content_body
+              body: content_body,
             },
             description: advisory.title,
             location: {
               path: "Gemfile.lock",
               lines: {
                 begin: line_number,
-                end: line_number
-              }
+                end: line_number,
+              },
             },
             remediation_points: remediation_points,
             severity: severity,
-            type: "Issue"
+            type: "Issue",
           }.to_json(a)
         end
 
@@ -45,7 +45,7 @@ module CC
             "**Advisory**: #{identifier}",
             "**Criticality**: #{advisory.criticality.capitalize}",
             "**URL**: #{advisory.url}",
-            "**Solution**: #{solution}"
+            "**Solution**: #{solution}",
           ].join("\n\n")
         end
 

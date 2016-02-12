@@ -2,6 +2,6 @@
 
 $LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), "../lib")))
 
-require 'cc/engine/bundler_audit'
+require "cc/engine/bundler_audit"
 
 CC::Engine::BundlerAudit::Analyzer.new(directory: "/code").run
