@@ -1,0 +1,42 @@
+[
+    {
+        "categories": [
+            "Security"
+        ],
+        "check_name": "Insecure Source",
+        "content": {
+            "body": ""
+        },
+        "description": "Insecure Source URI found: git://github.com/plataformatec/simple_form.git",
+        "location": {
+            "lines": {
+                "begin": 2,
+                "end": 2
+            },
+            "path": "Gemfile.lock"
+        },
+        "remediation_points": 5000000,
+        "severity": "normal",
+        "type": "Issue"
+    },
+    {
+        "categories": [
+            "Security"
+        ],
+        "check_name": "Insecure Source",
+        "content": {
+            "body": ""
+        },
+        "description": "Insecure Source URI found: http://rubygems.org/",
+        "location": {
+            "lines": {
+                "begin": 10,
+                "end": 10
+            },
+            "path": "Gemfile.lock"
+        },
+        "remediation_points": 5000000,
+        "severity": "normal",
+        "type": "Issue"
+    }
+]

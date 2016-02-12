@@ -1,7 +1,7 @@
 module CC
   module Engine
     module BundlerAudit
-      class Remediation
+      class UnpatchedGemRemediation
         MAJOR_UPGRADE_POINTS = 50_000_000
         MINOR_UPGRADE_POINTS = 5_000_000
         PATCH_UPGRADE_POINTS = 500_000
