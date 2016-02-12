@@ -1,43 +1,120 @@
+################################################################################
+# Ruby Version
+################################################################################
+
 AllCops:
   TargetRubyVersion: 2.2
+
+################################################################################
+# Metrics
+################################################################################
+
+Metrics/LineLength:
+  Enabled: false
+
 Metrics/AbcSize:
   Enabled: false
 
-Metrics/LineLength:
+################################################################################
+# Style
+################################################################################
+
+# Executables are conventionally named bin/foo-bar
+Style/FileName:
+  Exclude:
+  - bin/**/*
+
+# We don't (currently) document our code
+Style/Documentation:
+  Enabled: false
+
+# Always use double-quotes to keep things simple
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# Use a trailing comma to keep diffs clean when elements are inserted or removed
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+# We avoid GuardClause because it can result in "suprise return"
+Style/GuardClause:
+  Enabled: false
+
+# We avoid IfUnlessModifier because it can result in "suprise if"
+Style/IfUnlessModifier:
+  Enabled: false
+
+# We don't care about the fail/raise distinction
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+# Common globals we allow
+Style/GlobalVars:
+  AllowedVariables:
+  - "$statsd"
+  - "$mongo"
+  - "$rollout"
+
+# Allow $! in config/initializers
+Style/SpecialGlobalVars:
+  Exclude:
+  - config/initializers/**/*
+
+# We have common cases where has_ and have_ make sense
+Style/PredicateName:
+  Enabled: true
+  NamePrefixBlacklist:
+  - is_
+
+# We use %w[ ], not %w( ) because the former looks like an array
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    "%w": []
+    "%W": []
+
+# Allow "trivial" accessors when defined as a predicate? method
+Style/TrivialAccessors:
+  AllowPredicates: true
+
+Style/Next:
+  Enabled: false
+
+# We think it's OK to use the "extend self" module pattern
+Style/ModuleFunction:
+  Enabled: false
+
+################################################################################
+# Rails - disable things because we're primarily non-rails
+################################################################################
+
+Rails/Delegate:
+  Enabled: false
+
+Rails/Output:
   Enabled: false
 
 Rails/TimeZone:
   Enabled: false
 
-SignalException:
-  Enabled: false
+################################################################################
+# Specs - be more lenient on length checks and block styles
+################################################################################
 
-Style/StringLiterals:
-  Enabled: false
+Metrics/ModuleLength:
+  Exclude:
+  - spec/**/*
 
-Style/Documentation:
-  Enabled: false
-
-Style/TrailingCommaInLiteral:
-  Enabled: false
+Metrics/MethodLength:
+  Exclude:
+  - spec/**/*
 
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'spec/**/*'
+  - spec/**/*
 
-Style/IfUnlessModifier:
-  Enabled: false
-
-Style/DotPosition:
-  Enabled: false
-
-Style/GuardClause:
-  Enabled: false
-
-Style/StringLiteralsInInterpolation:
-  Enabled: false
-
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%w': []
-    '%W': []
+Style/BlockDelimiters:
+  Exclude:
+  - spec/**/*
