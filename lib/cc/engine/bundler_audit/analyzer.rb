@@ -13,7 +13,7 @@ module CC
           if gemfile_lock_exists?
             Dir.chdir(directory) do
               Bundler::Audit::Scanner.new.scan do |vulnerability|
-                issue = Issue.new(vulnerability, gemfile_lock_lines)
+                issue = issue_for_vulerability(vulnerability)
 
                 io.print("#{issue.to_json}\0")
               end
@@ -27,8 +27,17 @@ module CC
 
         attr_reader :directory, :io
 
+        def issue_for_vulerability(vulnerability)
+          case vulnerability
+          when Bundler::Audit::Scanner::UnpatchedGem
+            UnpatchedGemIssue.new(vulnerability, gemfile_lock_lines)
+          when Bundler::Audit::Scanner::InsecureSource
+            InsecureSourceIssue.new(vulnerability, gemfile_lock_lines)
+          end
+        end
+
         def gemfile_lock_lines
-          @gemfile_lock_lines ||= File.open(gemfile_lock_path).lines.to_a
+          @gemfile_lock_lines ||= File.open(gemfile_lock_path).each_line.to_a
         end
 
         def gemfile_lock_exists?

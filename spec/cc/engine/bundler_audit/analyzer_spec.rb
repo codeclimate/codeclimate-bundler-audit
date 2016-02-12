@@ -11,16 +11,29 @@ module CC::Engine::BundlerAudit
           to raise_error(Analyzer::GemfileLockNotFound)
       end
 
-      it "emits issues for Gemfile.lock problems" do
+      it "emits issues for unpatched gems in Gemfile.lock" do
         io = StringIO.new
         directory = fixture_directory("unpatched_versions")
 
+        issues = analyze_directory(directory, io)
+
+        expect(issues).to eq(expected_issues("unpatched_versions"))
+      end
+
+      it "emits issues for insecure sources in Gemfile.lock" do
+        io = StringIO.new
+        directory = fixture_directory("insecure_source")
+
+        issues = analyze_directory(directory, io)
+
+        expect(issues).to eq(expected_issues("insecure_source"))
+      end
+
+      def analyze_directory(directory, io)
         audit = Analyzer.new(directory: directory, io: io)
         audit.run
 
-        issues = io.string.split("\0").map { |issue| JSON.load(issue) }
-
-        expect(issues).to eq(expected_issues("unpatched_versions"))
+        io.string.split("\0").map { |issue| JSON.load(issue) }
       end
 
       def expected_issues(fixture)

@@ -1,7 +1,7 @@
 module CC
   module Engine
     module BundlerAudit
-      class Issue
+      class UnpatchedGemIssue
         GEM_REGEX = /^\s*(?<name>\S+) \([\d.]+\)/
         SEVERITIES = {
           high: "critical",
@@ -63,7 +63,7 @@ module CC
             requirements.last
           end
 
-          Remediation.new(gem.version, patched_versions).points
+          UnpatchedGemRemediation.new(gem.version, patched_versions).points
         end
 
         def severity
