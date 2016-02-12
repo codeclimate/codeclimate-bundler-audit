@@ -4,18 +4,21 @@ module CC
       class Analyzer
         GemfileLockNotFound = Class.new(StandardError)
 
-        def initialize(directory:, io: STDOUT)
+        def initialize(directory:, stdout: STDOUT, stderr: STDERR)
           @directory = directory
-          @io = io
+          @stdout = stdout
+          @stderr = stderr
         end
 
         def run
           if gemfile_lock_exists?
             Dir.chdir(directory) do
               Bundler::Audit::Scanner.new.scan do |vulnerability|
-                issue = issue_for_vulerability(vulnerability)
-
-                io.print("#{issue.to_json}\0")
+                if issue = issue_for_vulerability(vulnerability)
+                  stdout.print("#{issue.to_json}\0")
+                else
+                  stderr.print("Unsupported vulnerability: #{vulnerability.class.name}")
+                end
               end
             end
           else
@@ -25,7 +28,7 @@ module CC
 
         private
 
-        attr_reader :directory, :io
+        attr_reader :directory, :stdout, :stderr
 
         def issue_for_vulerability(vulnerability)
           case vulnerability
