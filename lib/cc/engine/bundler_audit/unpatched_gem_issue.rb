@@ -67,7 +67,7 @@ module CC
         end
 
         def severity
-          SEVERITIES[advisory.criticality]
+          SEVERITIES.fetch(advisory.criticality, "normal")
         end
 
         def solution
