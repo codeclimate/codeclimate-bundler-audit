@@ -15,15 +15,19 @@ module CC::Engine::BundlerAudit
 
         issues = analyze_directory(directory)
 
-        expect(issues).to eq(expected_issues("unpatched_versions"))
+        expected_issues("unpatched_versions").each do |expected_issue|
+          expect(issues).to include(expected_issue)
+        end
       end
 
       it "emits issues for insecure sources in Gemfile.lock" do
-        directory = fixture_directory("insecure_source")
+        directory = fixture_directory("insecure_sources")
 
         issues = analyze_directory(directory)
 
-        expect(issues).to eq(expected_issues("insecure_source"))
+        expected_issues("insecure_sources").each do |expected_issue|
+          expect(issues).to include(expected_issue)
+        end
       end
 
       it "logs to stderr when we encounter an unsupported vulnerability" do

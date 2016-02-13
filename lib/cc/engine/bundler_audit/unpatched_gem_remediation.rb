@@ -4,7 +4,8 @@ module CC
       class UnpatchedGemRemediation
         MAJOR_UPGRADE_POINTS = 50_000_000
         MINOR_UPGRADE_POINTS = 5_000_000
-        PATCH_UPGRADE_POINTS = 500_000
+        TINY_UPGRADE_POINTS = 500_000
+        MINIMUM_UPGRADE_POINTS = 50_000
         UNPATCHED_VERSION_POINTS = 500_000_000
 
         def initialize(gem_version, patched_versions)
@@ -31,7 +32,9 @@ module CC
           when current_version.minor != upgrade_version.minor
             MINOR_UPGRADE_POINTS
           when current_version.tiny != upgrade_version.tiny
-            PATCH_UPGRADE_POINTS
+            TINY_UPGRADE_POINTS
+          else
+            MINIMUM_UPGRADE_POINTS
           end
         end
 
