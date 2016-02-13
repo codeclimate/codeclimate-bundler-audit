@@ -15,10 +15,28 @@ module CC::Engine::BundlerAudit
         expect(remediation.points).to eq(UnpatchedGemRemediation::MINOR_UPGRADE_POINTS)
       end
 
-      it "returns patch upgrade remediation points when an upgrade requies a patch version bump" do
-        remediation = UnpatchedGemRemediation.new("1.0.0", %w[1.0.3 2.0.3])
+      it "returns tiny upgrade remediation points when an upgrade requies a tiny version bump" do
+        remediation = UnpatchedGemRemediation.new("1.0", %w[1.0.2])
 
-        expect(remediation.points).to eq(UnpatchedGemRemediation::PATCH_UPGRADE_POINTS)
+        expect(remediation.points).to eq(UnpatchedGemRemediation::TINY_UPGRADE_POINTS)
+      end
+
+      it "returns minimum upgrade remediation points when an upgrade requies a <= tiny2 version bump" do
+        remediation = UnpatchedGemRemediation.new("1.0", %w[1.0.0.2-2])
+
+        expect(remediation.points).to eq(UnpatchedGemRemediation::MINIMUM_UPGRADE_POINTS)
+
+        remediation = UnpatchedGemRemediation.new("1.0", %w[1.0.0.2-2])
+
+        expect(remediation.points).to eq(UnpatchedGemRemediation::MINIMUM_UPGRADE_POINTS)
+
+        remediation = UnpatchedGemRemediation.new("1.0", %w[1.0a2])
+
+        expect(remediation.points).to eq(UnpatchedGemRemediation::MINIMUM_UPGRADE_POINTS)
+
+        remediation = UnpatchedGemRemediation.new("1.0", %w[1.0b2])
+
+        expect(remediation.points).to eq(UnpatchedGemRemediation::MINIMUM_UPGRADE_POINTS)
       end
 
       it "returns unpatched version remediation points when an upgrade is not possible" do
