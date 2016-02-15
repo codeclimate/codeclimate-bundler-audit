@@ -1,0 +1,42 @@
+[
+    {
+        "categories": [
+            "Security"
+        ],
+        "check_name": "Insecure Source",
+        "content": {
+            "body": ""
+        },
+        "description": "Insecure Source URI found: http://rubygems.org/",
+        "location": {
+            "lines": {
+                "begin": 2,
+                "end": 2
+            },
+            "path": "Gemfile.lock"
+        },
+        "remediation_points": 5000000,
+        "severity": "normal",
+        "type": "Issue"
+    },
+    {
+        "categories": [
+            "Security"
+        ],
+        "check_name": "Insecure Dependency",
+        "content": {
+            "body": "**Advisory**: CVE-2014-7819\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/doAVp0YaTqY\n\n**Solution**: upgrade to ~> 2.0.5, ~> 2.1.4, ~> 2.2.3, ~> 2.3.3, ~> 2.4.6, ~> 2.5.1, ~> 2.7.1, ~> 2.8.3, ~> 2.9.4, ~> 2.10.2, ~> 2.11.3, ~> 2.12.3, >= 3.0.0.beta.3"
+        },
+        "description": "Arbitrary file existence disclosure in Sprockets",
+        "location": {
+            "lines": {
+                "begin": 7,
+                "end": 7
+            },
+            "path": "Gemfile.lock"
+        },
+        "remediation_points": 500000,
+        "severity": "normal",
+        "type": "Issue"
+    }
+]
