@@ -30,6 +30,16 @@ module CC::Engine::BundlerAudit
         end
       end
 
+      it "Supports alphanumeric gem versions like 3.0.0.rc.2 or 2.2.2.backport2" do
+        directory = fixture_directory("alphanumeric_versions")
+
+        issues = analyze_directory(directory)
+
+        expected_issues("alphanumeric_versions").each do |expected_issue|
+          expect(issues).to include(expected_issue)
+        end
+      end
+
       it "logs to stderr when we encounter an unsupported vulnerability" do
         directory = fixture_directory("unpatched_versions")
         stderr = StringIO.new

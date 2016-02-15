@@ -2,7 +2,7 @@ module CC
   module Engine
     module BundlerAudit
       class UnpatchedGemIssue
-        GEM_REGEX = /^\s*(?<name>\S+) \([\d.]+\)/
+        GEM_REGEX = /^\s*(?<name>\S+) \([\S.]+\)/
         SEVERITIES = {
           high: "critical",
           medium: "normal",

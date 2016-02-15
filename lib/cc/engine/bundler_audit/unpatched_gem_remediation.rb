@@ -39,13 +39,20 @@ module CC
         end
 
         def current_version
-          @current_version ||= Versionomy.parse(gem_version.to_s)
+          @current_version ||= parse_version(gem_version.to_s)
         end
 
         def upgrade_versions
           @upgrade_versions ||= patched_versions.map do |version|
-            Versionomy.parse(version.to_s)
+            parse_version(version)
           end
+        end
+
+        def parse_version(version)
+          Versionomy.parse(version.to_s)
+        rescue Versionomy::Errors::ParseError
+          version = Versionomy.parse(version.to_s, :rubygems)
+          Versionomy.create(major: version.field0, minor: version.field1, tiny: version.field2)
         end
       end
     end
