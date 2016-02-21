@@ -2,6 +2,7 @@ module CC
   module Engine
     module BundlerAudit
       class InsecureSourceIssue
+        CHECK_NAME = "Insecure Source".freeze
         REMEDIATION_POINTS = 5_000_000
         SOURCE_REGEX = /^\s*remote: (?<source>\S+)/
 
@@ -13,7 +14,7 @@ module CC
         def to_json(*a)
           {
             categories: %w[Security],
-            check_name: "Insecure Source",
+            check_name: CHECK_NAME,
             content: {
               body: "",
             },
@@ -28,6 +29,7 @@ module CC
             remediation_points: REMEDIATION_POINTS,
             severity: "normal",
             type: "Issue",
+            fingerprint: BundlerAudit.fingerprint_for(CHECK_NAME, source),
           }.to_json(a)
         end
 

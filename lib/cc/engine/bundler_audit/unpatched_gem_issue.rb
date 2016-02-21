@@ -2,6 +2,7 @@ module CC
   module Engine
     module BundlerAudit
       class UnpatchedGemIssue
+        CHECK_NAME = "Insecure Dependency".freeze
         GEM_REGEX = /^\s*(?<name>\S+) \([\S.]+\)/
         SEVERITIES = {
           high: "critical",
@@ -18,7 +19,7 @@ module CC
         def to_json(*a)
           {
             categories: %w[Security],
-            check_name: "Insecure Dependency",
+            check_name: CHECK_NAME,
             content: {
               body: content_body,
             },
@@ -33,6 +34,7 @@ module CC
             remediation_points: remediation_points,
             severity: severity,
             type: "Issue",
+            fingerprint: fingerprint,
           }.to_json(a)
         end
 
@@ -83,6 +85,10 @@ module CC
           when advisory.cve then "CVE-#{advisory.cve}"
           when advisory.osvdb then advisory.osvdb
           end
+        end
+
+        def fingerprint
+          BundlerAudit.fingerprint_for(CHECK_NAME, gem, advisory.id)
         end
       end
     end
