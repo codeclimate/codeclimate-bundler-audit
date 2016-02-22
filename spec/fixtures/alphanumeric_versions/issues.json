@@ -17,7 +17,8 @@
         },
         "remediation_points": 5000000,
         "severity": "normal",
-        "type": "Issue"
+        "type": "Issue",
+        "fingerprint": "dc0e043c56c03c2ada6c448f1958cfcb"
     },
     {
         "categories": [
@@ -37,6 +38,7 @@
         },
         "remediation_points": 500000,
         "severity": "normal",
-        "type": "Issue"
+        "type": "Issue",
+        "fingerprint": "d46fd8d3ccc9459f81fb4724ef158fdf"
     }
 ]
