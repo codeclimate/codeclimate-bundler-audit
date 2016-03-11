@@ -5,9 +5,10 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2015-7581\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/dthJ5wL69JE\n\n**Solution**: upgrade to ~> 4.2.5.1, ~> 4.1.14.1"
+            "body": "**Advisory**: CVE-2015-7581\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/dthJ5wL69JE\n\n**Solution**: upgrade to >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
         },
         "description": "Object leak vulnerability for wildcard controller routes in Action Pack",
+        "fingerprint": "06ae795b91e09069846af543d755b9e1",
         "location": {
             "lines": {
                 "begin": 18,
@@ -17,8 +18,7 @@
         },
         "remediation_points": 50000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "06ae795b91e09069846af543d755b9e1"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -26,9 +26,10 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2015-7576\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ANv0HDHEC3k\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, ~> 4.2.5.1, ~> 4.1.14.1, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2015-7576\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ANv0HDHEC3k\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
         },
         "description": "Timing attack vulnerability in basic authentication in Action Controller.",
+        "fingerprint": "98b8ca0112bff7bf79c1a85a829cf948",
         "location": {
             "lines": {
                 "begin": 18,
@@ -38,8 +39,7 @@
         },
         "remediation_points": 50000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "98b8ca0112bff7bf79c1a85a829cf948"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -47,9 +47,31 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2016-0751\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/9oLY_FCzvoc\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, ~> 4.2.5.1, ~> 4.1.14.1, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2016-2098\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ly-IH-fxr_Q\n\n**Solution**: upgrade to ~> 3.2.22.2, >= 4.2.5.2, ~> 4.2.5, >= 4.1.14.2, ~> 4.1.14"
+        },
+        "description": "Possible remote code execution vulnerability in Action Pack",
+        "fingerprint": "464176078b0d3514fdf527afe2f93315",
+        "location": {
+            "lines": {
+                "begin": 18,
+                "end": 18
+            },
+            "path": "Gemfile.lock"
+        },
+        "remediation_points": 50000,
+        "severity": "normal",
+        "type": "Issue"
+    },
+    {
+        "categories": [
+            "Security"
+        ],
+        "check_name": "Insecure Dependency",
+        "content": {
+            "body": "**Advisory**: CVE-2016-0751\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/9oLY_FCzvoc\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
         },
         "description": "Possible Object Leak and Denial of Service attack in Action Pack",
+        "fingerprint": "fb0889d061f06c4203ed27b43aca68b2",
         "location": {
             "lines": {
                 "begin": 18,
@@ -59,8 +81,7 @@
         },
         "remediation_points": 50000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "fb0889d061f06c4203ed27b43aca68b2"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -68,9 +89,10 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2016-0752\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, ~> 4.2.5.1, ~> 4.1.14.1, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2016-0752\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
         },
         "description": "Possible Information Leak Vulnerability in Action View",
+        "fingerprint": "f26c202060c497fd32f90c538c543445",
         "location": {
             "lines": {
                 "begin": 25,
@@ -80,8 +102,7 @@
         },
         "remediation_points": 50000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "f26c202060c497fd32f90c538c543445"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -89,9 +110,10 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2016-0753\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/6jQVC1geukQ\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, ~> 4.2.5.1, ~> 4.1.14.1"
+            "body": "**Advisory**: CVE-2016-0753\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/6jQVC1geukQ\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
         },
         "description": "Possible Input Validation Circumvention in Active Model",
+        "fingerprint": "723fd12f6da25240ffbf2f3312b8e33d",
         "location": {
             "lines": {
                 "begin": 34,
@@ -101,8 +123,7 @@
         },
         "remediation_points": 50000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "723fd12f6da25240ffbf2f3312b8e33d"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -110,9 +131,10 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2015-7577\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/cawsWcQ6c8g\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, ~> 4.2.5.1, ~> 4.1.14.1, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2015-7577\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/cawsWcQ6c8g\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
         },
         "description": "Nested attributes rejection proc bypass in Active Record",
+        "fingerprint": "2441a69a4af613e9235af4024ff21b30",
         "location": {
             "lines": {
                 "begin": 37,
@@ -122,8 +144,7 @@
         },
         "remediation_points": 50000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "2441a69a4af613e9235af4024ff21b30"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -134,6 +155,7 @@
             "body": "**Advisory**: CVE-2015-8314\n\n**URL**: http://blog.plataformatec.com.br/2016/01/improve-remember-me-cookie-expiration-in-devise/\n\n**Solution**: upgrade to >= 3.5.4"
         },
         "description": "Devise Gem for Ruby Unauthorized Access Using Remember Me Cookie",
+        "fingerprint": "c1c5e720803020244d18bddad5f5f790",
         "location": {
             "lines": {
                 "begin": 51,
@@ -143,8 +165,7 @@
         },
         "remediation_points": 5000000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "c1c5e720803020244d18bddad5f5f790"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -155,6 +176,7 @@
             "body": "**Advisory**: CVE-2015-1840\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/ruby-security-ann/XIZPbobuwaY\n\n**Solution**: upgrade to >= 4.0.4, ~> 3.1.3"
         },
         "description": "CSRF Vulnerability in jquery-rails",
+        "fingerprint": "20188b3cc82f969dea234989e92339d4",
         "location": {
             "lines": {
                 "begin": 63,
@@ -164,8 +186,7 @@
         },
         "remediation_points": 500000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "20188b3cc82f969dea234989e92339d4"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -176,6 +197,7 @@
             "body": "**Advisory**: CVE-2015-7499\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/ruby-security-ann/Dy7YiKb_pMM\n\n**Solution**: upgrade to >= 1.6.7.2"
         },
         "description": "Nokogiri gem contains a heap-based buffer overflow vulnerability in libxml2\n",
+        "fingerprint": "65fefc6b16a09d76d5c76b03247a48e1",
         "location": {
             "lines": {
                 "begin": 74,
@@ -185,8 +207,7 @@
         },
         "remediation_points": 50000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "65fefc6b16a09d76d5c76b03247a48e1"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -197,6 +218,7 @@
             "body": "**Advisory**: CVE-2015-7578\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to ~> 1.0.3"
         },
         "description": "Possible XSS vulnerability in rails-html-sanitizer",
+        "fingerprint": "b344012bca53e8faaafbf0f943776ea0",
         "location": {
             "lines": {
                 "begin": 97,
@@ -206,8 +228,7 @@
         },
         "remediation_points": 500000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "b344012bca53e8faaafbf0f943776ea0"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -218,6 +239,7 @@
             "body": "**Advisory**: CVE-2015-7580\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to ~> 1.0.3"
         },
         "description": "Possible XSS vulnerability in rails-html-sanitizer",
+        "fingerprint": "10818805098b10f2fe6e181f0961445c",
         "location": {
             "lines": {
                 "begin": 97,
@@ -227,8 +249,7 @@
         },
         "remediation_points": 500000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "10818805098b10f2fe6e181f0961445c"
+        "type": "Issue"
     },
     {
         "categories": [
@@ -239,6 +260,7 @@
             "body": "**Advisory**: 126747\n\n**URL**: https://github.com/mishoo/UglifyJS2/issues/751\n\n**Solution**: upgrade to >= 2.7.2"
         },
         "description": "uglifier incorrectly handles non-boolean comparisons during minification",
+        "fingerprint": "118e36b455317d002e7fde24873ecc40",
         "location": {
             "lines": {
                 "begin": 118,
@@ -248,7 +270,6 @@
         },
         "remediation_points": 5000000,
         "severity": "normal",
-        "type": "Issue",
-        "fingerprint": "118e36b455317d002e7fde24873ecc40"
+        "type": "Issue"
     }
 ]

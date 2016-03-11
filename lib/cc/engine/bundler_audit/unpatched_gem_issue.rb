@@ -60,12 +60,18 @@ module CC
         end
 
         def remediation_points
-          patched_versions = advisory.patched_versions.map do |gem_requirement|
-            requirements = Gem::Requirement.parse(gem_requirement)
-            requirements.last
+          UnpatchedGemRemediation.new(gem.version, parsed_upgrade_versions).points
+        end
+
+        def parsed_upgrade_versions
+          expanded = advisory.patched_versions.map do |requirement|
+            requirement.to_s.split(",").map(&:strip)
           end
 
-          UnpatchedGemRemediation.new(gem.version, patched_versions).points
+          expanded.flatten.map do |version|
+            requirements = Gem::Requirement.parse(version)
+            requirements.last
+          end
         end
 
         def severity
