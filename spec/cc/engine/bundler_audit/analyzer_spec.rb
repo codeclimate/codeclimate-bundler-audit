@@ -10,6 +10,16 @@ module CC::Engine::BundlerAudit
           to raise_error(Analyzer::GemfileLockNotFound)
       end
 
+      it "does nothing if Gemfile.lock is not in include_paths" do
+        Tempfile.open("engine_config") do |fh|
+          fh.write(%({"include_paths": ["Gemfile", "src/"]}))
+          fh.flush && fh.rewind
+          directory = fixture_directory("unpatched_versions")
+          issues = analyze_directory(directory, engine_config_path: fh.path)
+          expect(issues).to eq([])
+        end
+      end
+
       it "emits issues for unpatched gems in Gemfile.lock" do
         directory = fixture_directory("unpatched_versions")
 
@@ -51,8 +61,8 @@ module CC::Engine::BundlerAudit
         expect(stderr.string).to eq("Unsupported vulnerability: UnhandledVulnerability")
       end
 
-      def analyze_directory(directory, stdout: StringIO.new, stderr: StringIO.new)
-        audit = Analyzer.new(directory: directory, stdout: stdout, stderr: stderr)
+      def analyze_directory(directory, engine_config_path: Analyzer::DEFAULT_CONFIG_PATH, stdout: StringIO.new, stderr: StringIO.new)
+        audit = Analyzer.new(directory: directory, engine_config_path: engine_config_path, stdout: stdout, stderr: stderr)
         audit.run
 
         stdout.string.split("\0").map { |issue| JSON.load(issue) }

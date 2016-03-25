@@ -3,32 +3,33 @@ module CC
     module BundlerAudit
       class Analyzer
         GemfileLockNotFound = Class.new(StandardError)
+        DEFAULT_CONFIG_PATH = "/config.json".freeze
 
-        def initialize(directory:, stdout: STDOUT, stderr: STDERR)
+        def initialize(directory:, engine_config_path: DEFAULT_CONFIG_PATH, stdout: STDOUT, stderr: STDERR)
           @directory = directory
+          @engine_config_path = engine_config_path
           @stdout = stdout
           @stderr = stderr
         end
 
         def run
-          if gemfile_lock_exists?
-            Dir.chdir(directory) do
-              Bundler::Audit::Scanner.new.scan do |vulnerability|
-                if (issue = issue_for_vulerability(vulnerability))
-                  stdout.print("#{issue.to_json}\0")
-                else
-                  stderr.print("Unsupported vulnerability: #{vulnerability.class.name}")
-                end
+          raise(GemfileLockNotFound, "No Gemfile.lock found.") unless gemfile_lock_exists?
+          return unless gemfile_lock_in_include_paths?
+
+          Dir.chdir(directory) do
+            Bundler::Audit::Scanner.new.scan do |vulnerability|
+              if (issue = issue_for_vulerability(vulnerability))
+                stdout.print("#{issue.to_json}\0")
+              else
+                stderr.print("Unsupported vulnerability: #{vulnerability.class.name}")
               end
             end
-          else
-            raise GemfileLockNotFound, "No Gemfile.lock found."
           end
         end
 
         private
 
-        attr_reader :directory, :stdout, :stderr
+        attr_reader :directory, :engine_config_path, :stdout, :stderr
 
         def issue_for_vulerability(vulnerability)
           case vulnerability
@@ -45,6 +46,20 @@ module CC
 
         def gemfile_lock_exists?
           File.exist?(gemfile_lock_path)
+        end
+
+        def gemfile_lock_in_include_paths?
+          include_paths = engine_config.fetch("include_paths", ["./"])
+          include_paths.include?("./") || include_paths.include?("Gemfile.lock")
+        end
+
+        def engine_config
+          @engine_config ||=
+            if File.exist?(engine_config_path)
+              JSON.parse(File.read(engine_config_path))
+            else
+              {}
+            end
         end
 
         def gemfile_lock_path
