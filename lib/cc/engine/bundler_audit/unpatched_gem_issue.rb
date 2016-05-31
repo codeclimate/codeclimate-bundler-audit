@@ -87,7 +87,7 @@ module CC
         end
 
         def identifier
-          advisory.cve_id || advisory.osvdb
+          advisory.cve_id || advisory.osvdb_id
         end
 
         def fingerprint
