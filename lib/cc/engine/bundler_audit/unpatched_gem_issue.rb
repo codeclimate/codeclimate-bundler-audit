@@ -87,10 +87,7 @@ module CC
         end
 
         def identifier
-          case
-          when advisory.cve then "CVE-#{advisory.cve}"
-          when advisory.osvdb then advisory.osvdb
-          end
+          advisory.cve_id || advisory.osvdb_id
         end
 
         def fingerprint

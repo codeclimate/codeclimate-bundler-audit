@@ -257,7 +257,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: 126747\n\n**URL**: https://github.com/mishoo/UglifyJS2/issues/751\n\n**Solution**: upgrade to >= 2.7.2"
+            "body": "**Advisory**: OSVDB-126747\n\n**URL**: https://github.com/mishoo/UglifyJS2/issues/751\n\n**Solution**: upgrade to >= 2.7.2"
         },
         "description": "uglifier incorrectly handles non-boolean comparisons during minification",
         "fingerprint": "118e36b455317d002e7fde24873ecc40",
