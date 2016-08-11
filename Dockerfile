@@ -10,6 +10,8 @@ RUN bundle install --jobs 4 && \
 RUN adduser -u 9000 -D app
 USER app
 
+COPY DATABASE_VERSION /usr/src/app/DATABASE_VERSION
+
 RUN bundle-audit update
 
 COPY . /usr/src/app
