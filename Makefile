@@ -1,4 +1,4 @@
-.PHONY: image test citest
+.PHONY: image test citest update_version
 
 IMAGE_NAME ?= codeclimate/codeclimate-bundler-audit
 
@@ -10,3 +10,7 @@ test: image
 
 citest:
 	docker run --rm $(IMAGE_NAME) bundle exec rake
+
+update_database:
+	date > DATABASE_VERSION
+	make image
