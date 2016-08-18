@@ -1,6 +1,6 @@
 # Code Climate bundler-audit Engine
 
-[![Code Climate](https://codeclimate.com/repos/55841a7de30ba012e6020762/badges/20e726217fbdea3896db/gpa.svg)](https://codeclimate.com/repos/55841a7de30ba012e6020762/feed)
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate-bundler-audit/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate-bundler-audit)
 
 `codeclimate-bundler-audit` is a Code Climate engine that wraps [bundler-audit](https://github.com/rubysec/bundler-audit). You can run it on your command line using the Code Climate CLI, or on our hosted analysis platform.
 
