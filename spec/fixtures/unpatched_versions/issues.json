@@ -89,7 +89,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2016-0752\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2016-0752\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to ~> 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
         },
         "description": "Possible Information Leak Vulnerability in Action View",
         "fingerprint": "f26c202060c497fd32f90c538c543445",
