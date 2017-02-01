@@ -6,8 +6,9 @@ module CC
         REMEDIATION_POINTS = 5_000_000
         SOURCE_REGEX = /^\s*remote: (?<source>\S+)/
 
-        def initialize(result, gemfile_lock_lines)
+        def initialize(result, gemfile_lock_path, gemfile_lock_lines)
           @source = result.source
+          @gemfile_lock_path = gemfile_lock_path
           @gemfile_lock_lines = gemfile_lock_lines
         end
 
@@ -20,7 +21,7 @@ module CC
             },
             description: "Insecure Source URI found: #{source}",
             location: {
-              path: "Gemfile.lock",
+              path: gemfile_lock_path,
               lines: {
                 begin: line_number,
                 end: line_number,
@@ -35,7 +36,7 @@ module CC
 
         private
 
-        attr_reader :source, :gemfile_lock_lines
+        attr_reader :source, :gemfile_lock_path, :gemfile_lock_lines
 
         def line_number
           @line_number ||= begin
