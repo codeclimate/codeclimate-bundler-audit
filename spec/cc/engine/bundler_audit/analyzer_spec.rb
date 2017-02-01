@@ -11,11 +11,9 @@ module CC::Engine::BundlerAudit
       end
 
       it "does nothing if Gemfile.lock is not in include_paths" do
-        Tempfile.open("engine_config") do |fh|
-          fh.write(%({"include_paths": ["Gemfile", "src/"]}))
-          fh.flush && fh.rewind
+        with_written_config(include_paths: %w[Gemfile src/]) do |path|
           directory = fixture_directory("unpatched_versions")
-          issues = analyze_directory(directory, engine_config_path: fh.path)
+          issues = analyze_directory(directory, engine_config_path: path)
           expect(issues).to eq([])
         end
       end
@@ -59,6 +57,30 @@ module CC::Engine::BundlerAudit
         analyze_directory(directory, stderr: stderr)
 
         expect(stderr.string).to eq("Unsupported vulnerability: UnhandledVulnerability")
+      end
+
+      it "supports an alternate path to Gemfile.lock" do
+        with_written_config(config: { path: "sub/Gemfile.lock" }) do |path|
+          directory = fixture_directory("alternate_path")
+
+          issues = analyze_directory(directory, engine_config_path: path)
+
+          expected_issues("unpatched_versions").each do |expected_issue|
+            expect(issues).to include(expected_issue)
+          end
+        end
+      end
+
+      def with_written_config(config: {},include_paths: ["./"])
+        config = { config: config, include_paths: include_paths }
+
+        Tempfile.open("engine_config") do |fh|
+          fh.write(config.to_json)
+          fh.flush
+          fh.rewind
+
+          yield fh.path
+        end
       end
 
       def analyze_directory(directory, engine_config_path: Analyzer::DEFAULT_CONFIG_PATH, stdout: StringIO.new, stderr: StringIO.new)
