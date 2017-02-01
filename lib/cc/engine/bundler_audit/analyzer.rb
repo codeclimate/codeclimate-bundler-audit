@@ -4,6 +4,7 @@ module CC
       class Analyzer
         GemfileLockNotFound = Class.new(StandardError)
         DEFAULT_CONFIG_PATH = "/config.json".freeze
+        GEMFILE_LOCK = "Gemfile.lock"
 
         def initialize(directory:, engine_config_path: DEFAULT_CONFIG_PATH, stdout: STDOUT, stderr: STDERR)
           @directory = directory
@@ -16,12 +17,16 @@ module CC
           raise(GemfileLockNotFound, "No Gemfile.lock found.") unless gemfile_lock_exists?
           return unless gemfile_lock_in_include_paths?
 
-          Dir.chdir(directory) do
-            Bundler::Audit::Scanner.new.scan do |vulnerability|
-              if (issue = issue_for_vulerability(vulnerability))
-                stdout.print("#{issue.to_json}\0")
-              else
-                stderr.print("Unsupported vulnerability: #{vulnerability.class.name}")
+          Dir.mktmpdir do |dir|
+            FileUtils.cp(gemfile_lock_path, File.join(dir, GEMFILE_LOCK))
+
+            Dir.chdir(dir) do
+              Bundler::Audit::Scanner.new.scan do |vulnerability|
+                if (issue = issue_for_vulerability(vulnerability))
+                  stdout.print("#{issue.to_json}\0")
+                else
+                  stderr.print("Unsupported vulnerability: #{vulnerability.class.name}")
+                end
               end
             end
           end
@@ -41,7 +46,9 @@ module CC
         end
 
         def gemfile_lock_lines
-          @gemfile_lock_lines ||= File.open(gemfile_lock_path).each_line.to_a
+          # N.B. this runs within the temporary directory, where the lock file
+          # has been moved to ./Gemfile.lock so the scan will work.
+          @gemfile_lock_lines ||= File.open(GEMFILE_LOCK).each_line.to_a
         end
 
         def gemfile_lock_exists?
@@ -50,7 +57,7 @@ module CC
 
         def gemfile_lock_in_include_paths?
           include_paths = engine_config.fetch("include_paths", ["./"])
-          include_paths.include?("./") || include_paths.include?("Gemfile.lock")
+          include_paths.include?("./") || include_paths.include?(gemfile_lock_path)
         end
 
         def engine_config
@@ -63,7 +70,11 @@ module CC
         end
 
         def gemfile_lock_path
-          File.join(directory, "Gemfile.lock")
+          relative_path = engine_config.
+            fetch("config", {}).
+            fetch("path", GEMFILE_LOCK)
+
+          File.join(directory, relative_path)
         end
       end
     end
