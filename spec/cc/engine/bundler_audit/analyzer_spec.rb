@@ -65,9 +65,7 @@ module CC::Engine::BundlerAudit
 
           issues = analyze_directory(directory, engine_config_path: path)
 
-          expected_issues("unpatched_versions").each do |expected_issue|
-            expect(issues).to include(expected_issue)
-          end
+          expect(issues.first["location"]["path"]).to eq "sub/Gemfile.lock"
         end
       end
 

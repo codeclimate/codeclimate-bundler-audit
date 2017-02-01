@@ -39,9 +39,9 @@ module CC
         def issue_for_vulerability(vulnerability)
           case vulnerability
           when Bundler::Audit::Scanner::UnpatchedGem
-            UnpatchedGemIssue.new(vulnerability, gemfile_lock_lines)
+            UnpatchedGemIssue.new(vulnerability, gemfile_lock_relative_path, gemfile_lock_lines)
           when Bundler::Audit::Scanner::InsecureSource
-            InsecureSourceIssue.new(vulnerability, gemfile_lock_lines)
+            InsecureSourceIssue.new(vulnerability, gemfile_lock_relative_path, gemfile_lock_lines)
           end
         end
 
@@ -70,8 +70,11 @@ module CC
         end
 
         def gemfile_lock_path
-          path = engine_config.fetch("config", {}).fetch("path", GEMFILE_LOCK)
-          File.join(directory, path)
+          File.join(directory, gemfile_lock_relative_path)
+        end
+
+        def gemfile_lock_relative_path
+          engine_config.fetch("config", {}).fetch("path", GEMFILE_LOCK)
         end
       end
     end
