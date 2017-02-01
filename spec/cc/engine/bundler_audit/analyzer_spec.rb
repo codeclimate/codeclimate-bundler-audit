@@ -71,7 +71,7 @@ module CC::Engine::BundlerAudit
         end
       end
 
-      def with_written_config(config: {},include_paths: ["./"])
+      def with_written_config(config: {}, include_paths: ["./"])
         config = { config: config, include_paths: include_paths }
 
         Tempfile.open("engine_config") do |fh|

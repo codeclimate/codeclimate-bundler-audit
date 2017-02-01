@@ -4,7 +4,7 @@ module CC
       class Analyzer
         GemfileLockNotFound = Class.new(StandardError)
         DEFAULT_CONFIG_PATH = "/config.json".freeze
-        GEMFILE_LOCK = "Gemfile.lock"
+        GEMFILE_LOCK = "Gemfile.lock".freeze
 
         def initialize(directory:, engine_config_path: DEFAULT_CONFIG_PATH, stdout: STDOUT, stderr: STDERR)
           @directory = directory
@@ -70,11 +70,8 @@ module CC
         end
 
         def gemfile_lock_path
-          relative_path = engine_config.
-            fetch("config", {}).
-            fetch("path", GEMFILE_LOCK)
-
-          File.join(directory, relative_path)
+          path = engine_config.fetch("config", {}).fetch("path", GEMFILE_LOCK)
+          File.join(directory, path)
         end
       end
     end
