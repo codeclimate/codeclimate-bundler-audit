@@ -57,7 +57,7 @@ module CC
 
         def gemfile_lock_in_include_paths?
           include_paths = engine_config.fetch("include_paths", ["./"])
-          include_paths.include?("./") || include_paths.include?(gemfile_lock_path)
+          include_paths.include?("./") || include_paths.include?(gemfile_lock_relative_path)
         end
 
         def engine_config

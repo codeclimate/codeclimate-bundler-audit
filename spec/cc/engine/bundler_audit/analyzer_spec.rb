@@ -19,44 +19,52 @@ module CC::Engine::BundlerAudit
       end
 
       it "emits issues for unpatched gems in Gemfile.lock" do
-        directory = fixture_directory("unpatched_versions")
+        with_default_written_config do |path|
+          directory = fixture_directory("unpatched_versions")
 
-        issues = analyze_directory(directory)
+          issues = analyze_directory(directory, engine_config_path: path)
 
-        expected_issues("unpatched_versions").each do |expected_issue|
-          expect(issues).to include(expected_issue)
+          expected_issues("unpatched_versions").each do |expected_issue|
+            expect(issues).to include(expected_issue)
+          end
         end
       end
 
       it "emits issues for insecure sources in Gemfile.lock" do
-        directory = fixture_directory("insecure_sources")
+        with_default_written_config do |path|
+          directory = fixture_directory("insecure_sources")
 
-        issues = analyze_directory(directory)
+          issues = analyze_directory(directory, engine_config_path: path)
 
-        expected_issues("insecure_sources").each do |expected_issue|
-          expect(issues).to include(expected_issue)
+          expected_issues("insecure_sources").each do |expected_issue|
+            expect(issues).to include(expected_issue)
+          end
         end
       end
 
       it "Supports alphanumeric gem versions like 3.0.0.rc.2 or 2.2.2.backport2" do
-        directory = fixture_directory("alphanumeric_versions")
+        with_default_written_config do |path|
+          directory = fixture_directory("alphanumeric_versions")
 
-        issues = analyze_directory(directory)
+          issues = analyze_directory(directory, engine_config_path: path)
 
-        expected_issues("alphanumeric_versions").each do |expected_issue|
-          expect(issues).to include(expected_issue)
+          expected_issues("alphanumeric_versions").each do |expected_issue|
+            expect(issues).to include(expected_issue)
+          end
         end
       end
 
       it "logs to stderr when we encounter an unsupported vulnerability" do
-        directory = fixture_directory("unpatched_versions")
-        stderr = StringIO.new
+        with_default_written_config do |path|
+          directory = fixture_directory("unpatched_versions")
+          stderr = StringIO.new
 
-        stub_vulnerability("UnhandledVulnerability")
+          stub_vulnerability("UnhandledVulnerability")
 
-        analyze_directory(directory, stderr: stderr)
+          analyze_directory(directory, stderr: stderr, engine_config_path: path)
 
-        expect(stderr.string).to eq("Unsupported vulnerability: UnhandledVulnerability")
+          expect(stderr.string).to eq("Unsupported vulnerability: UnhandledVulnerability")
+        end
       end
 
       it "supports an alternate path to Gemfile.lock" do
@@ -66,6 +74,12 @@ module CC::Engine::BundlerAudit
           issues = analyze_directory(directory, engine_config_path: path)
 
           expect(issues.first["location"]["path"]).to eq "sub/Gemfile.lock"
+        end
+      end
+
+      def with_default_written_config
+        with_written_config(include_paths: %w[Gemfile Gemfile.lock]) do |path|
+          yield(path)
         end
       end
 
