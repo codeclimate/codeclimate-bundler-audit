@@ -4,6 +4,7 @@ module CC
       class Analyzer
         GemfileLockNotFound = Class.new(StandardError)
         DEFAULT_CONFIG_PATH = "/config.json".freeze
+        GEMFILE = "Gemfile".freeze
         GEMFILE_LOCK = "Gemfile.lock".freeze
 
         def initialize(directory:, engine_config_path: DEFAULT_CONFIG_PATH, stdout: STDOUT, stderr: STDERR)
@@ -19,6 +20,7 @@ module CC
 
           Dir.mktmpdir do |dir|
             FileUtils.cp(gemfile_lock_path, File.join(dir, GEMFILE_LOCK))
+            FileUtils.cp(gemfile_path, File.join(dir, GEMFILE))
 
             Dir.chdir(dir) do
               Bundler::Audit::Scanner.new.scan do |vulnerability|
@@ -75,6 +77,14 @@ module CC
 
         def gemfile_lock_relative_path
           engine_config.fetch("config", {}).fetch("path", GEMFILE_LOCK)
+        end
+
+        def gemfile_path
+          File.join(directory, gemfile_relative_path)
+        end
+
+        def gemfile_relative_path
+          gemfile_lock_relative_path.sub(/\.lock$/, "")
         end
       end
     end
