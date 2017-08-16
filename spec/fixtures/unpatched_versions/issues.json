@@ -334,5 +334,47 @@
         "remediation_points": 5000000,
         "severity": "normal",
         "type": "Issue"
-    }
+    },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2016-4658\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1615\n\n**Solution**: upgrade to >= 1.7.1"
+    },
+    "description": "Nokogiri gem contains several vulnerabilities in libxml2 and libxslt",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 74,
+        "end": 74
+      }
+    },
+    "remediation_points": 5000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "7cb910edbbeae3af56dcd8e4b7546bca"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2017-5029\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1634\n\n**Solution**: upgrade to >= 1.7.2"
+    },
+    "description": "Nokogiri gem contains two upstream vulnerabilities in libxslt 1.1.29",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 74,
+        "end": 74
+      }
+    },
+    "remediation_points": 5000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "8c4f377661e37a9d29579335e6f0e5e4"
+  }
 ]
