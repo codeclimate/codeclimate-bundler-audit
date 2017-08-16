@@ -47,16 +47,16 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2015-7576\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ANv0HDHEC3k\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2015-7576\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ANv0HDHEC3k\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
         },
         "description": "Timing attack vulnerability in basic authentication in Action Controller.",
         "fingerprint": "98b8ca0112bff7bf79c1a85a829cf948",
         "location": {
-            "lines": {
-                "begin": 18,
-                "end": 18
-            },
-            "path": "Gemfile.lock"
+          "lines": {
+              "begin": 18,
+              "end": 18
+          },
+          "path": "Gemfile.lock"
         },
         "remediation_points": 50000,
         "severity": "normal",
