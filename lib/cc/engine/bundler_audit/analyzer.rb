@@ -1,3 +1,5 @@
+require "tmpdir"
+
 module CC
   module Engine
     module BundlerAudit
