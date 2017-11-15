@@ -1,8 +1,11 @@
 source "https://rubygems.org"
 
-gem "bundler-audit", "~> 0.5.0"
+gem "bundler-audit", "~> 0.6.0"
 gem "versionomy", "~> 0.5.0"
-gem "rake"
+
+group :development do
+  gem "rake"
+end
 
 group :test do
   gem "pry"
