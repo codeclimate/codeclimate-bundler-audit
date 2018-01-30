@@ -278,7 +278,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2015-7578\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to ~> 1.0.3"
+            "body": "**Advisory**: CVE-2015-7578\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to >= 1.0.3"
         },
         "description": "Possible XSS vulnerability in rails-html-sanitizer",
         "fingerprint": "b344012bca53e8faaafbf0f943776ea0",
@@ -299,7 +299,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2015-7580\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to ~> 1.0.3"
+            "body": "**Advisory**: CVE-2015-7580\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to >= 1.0.3"
         },
         "description": "Possible XSS vulnerability in rails-html-sanitizer",
         "fingerprint": "10818805098b10f2fe6e181f0961445c",
@@ -341,7 +341,7 @@
     ],
     "check_name": "Insecure Dependency",
     "content": {
-      "body": "**Advisory**: CVE-2016-4658\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1615\n\n**Solution**: upgrade to >= 1.7.1"
+      "body": "**Advisory**: CVE-2016-4658\n\n**Criticality**: High\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1615\n\n**Solution**: upgrade to >= 1.7.1"
     },
     "description": "Nokogiri gem contains several vulnerabilities in libxml2 and libxslt",
     "location": {
@@ -352,7 +352,7 @@
       }
     },
     "remediation_points": 5000000,
-    "severity": "normal",
+    "severity": "critical",
     "type": "Issue",
     "fingerprint": "7cb910edbbeae3af56dcd8e4b7546bca"
   },

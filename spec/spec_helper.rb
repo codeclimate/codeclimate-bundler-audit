@@ -4,3 +4,5 @@ require "rspec"
 require "pry"
 
 require "cc/engine/bundler_audit"
+
+require "support/be_present_in_helper"
