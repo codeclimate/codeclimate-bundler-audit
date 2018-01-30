@@ -24,9 +24,7 @@ module CC::Engine::BundlerAudit
 
           issues = analyze_directory(directory, engine_config_path: path)
 
-          expected_issues("unpatched_versions").each do |expected_issue|
-            expect(issues).to include(expected_issue)
-          end
+          expect(expected_issues("unpatched_versions")).to be_present_in(issues)
         end
       end
 
@@ -36,9 +34,7 @@ module CC::Engine::BundlerAudit
 
           issues = analyze_directory(directory, engine_config_path: path)
 
-          expected_issues("insecure_sources").each do |expected_issue|
-            expect(issues).to include(expected_issue)
-          end
+          expect(expected_issues("insecure_sources")).to be_present_in(issues)
         end
       end
 
@@ -48,9 +44,7 @@ module CC::Engine::BundlerAudit
 
           issues = analyze_directory(directory, engine_config_path: path)
 
-          expected_issues("alphanumeric_versions").each do |expected_issue|
-            expect(issues).to include(expected_issue)
-          end
+          expect(expected_issues("alphanumeric_versions")).to be_present_in(issues)
         end
       end
 
