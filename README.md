@@ -17,20 +17,8 @@ bundler-audit offers patch-level verification for [Bundler](http://bundler.io/).
 By default, bundler-audit will look for a `Gemfile.lock` file in the root of
 your project. Optionally configure Code Climate to look at a different path:
 
-**version 2**
-
 ```yml
 plugins:
-  bundler-audit:
-    enabled: true
-    config:
-      path: optional/path/to/Gemfile.lock
-```
-
-**version 1**
-
-```yml
-engines:
   bundler-audit:
     enabled: true
     config:
