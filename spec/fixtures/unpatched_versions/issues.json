@@ -5,7 +5,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2016-0751\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/9oLY_FCzvoc\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2016-0751\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/9oLY_FCzvoc\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
         },
         "description": "Possible Object Leak and Denial of Service attack in Action Pack",
         "fingerprint": "fb0889d061f06c4203ed27b43aca68b2",
@@ -110,7 +110,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2016-0752\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
+            "body": "**Advisory**: CVE-2016-0752\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
         },
         "description": "Possible Information Leak Vulnerability in Action View",
         "fingerprint": "f26c202060c497fd32f90c538c543445",
@@ -131,7 +131,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2016-0753\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/6jQVC1geukQ\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
+            "body": "**Advisory**: CVE-2016-0753\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/6jQVC1geukQ\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
         },
         "description": "Possible Input Validation Circumvention in Active Model",
         "fingerprint": "723fd12f6da25240ffbf2f3312b8e33d",
@@ -152,7 +152,7 @@
         ],
         "check_name": "Insecure Dependency",
         "content": {
-            "body": "**Advisory**: CVE-2015-7577\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/cawsWcQ6c8g\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
+            "body": "**Advisory**: CVE-2015-7577\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/cawsWcQ6c8g\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
         },
         "description": "Nested attributes rejection proc bypass in Active Record",
         "fingerprint": "2441a69a4af613e9235af4024ff21b30",
