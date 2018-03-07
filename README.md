@@ -12,6 +12,19 @@ bundler-audit offers patch-level verification for [Bundler](http://bundler.io/).
 2. Run `codeclimate engines:enable bundler-audit`. This command both installs the engine and enables it in your `.codeclimate.yml` file.
 3. You're ready to analyze! Browse into your project's folder and run `codeclimate analyze`.
 
+### Configuration
+
+By default, bundler-audit will look for a `Gemfile.lock` file in the root of
+your project. Optionally configure Code Climate to look at a different path:
+
+```yml
+plugins:
+  bundler-audit:
+    enabled: true
+    config:
+      path: optional/path/to/Gemfile.lock
+```
+
 ### Updating the vulnerability database
 
 If you want to update the vulnerability database, run
