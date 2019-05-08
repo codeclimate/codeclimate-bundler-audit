@@ -1,6 +1,8 @@
-.PHONY: image test citest update_version
+.PHONY: image test citest update_version release
 
 IMAGE_NAME ?= codeclimate/codeclimate-bundler-audit
+RELEASE_REGISTRY ?= us.gcr.io/code_climate
+RELEASE_TAG ?= latest
 TEST_IMAGE_NAME ?= $(IMAGE_NAME)-test
 
 image:
@@ -19,3 +21,7 @@ test:
 update_database:
 	date > DATABASE_VERSION
 	make image
+
+release:
+	docker tag $(IMAGE_NAME) $(RELEASE_REGISTRY)/codeclimate-bundler-audit:$(RELEASE_TAG)
+	docker push $(RELEASE_REGISTRY)/codeclimate-bundler-audit:$(RELEASE_TAG)

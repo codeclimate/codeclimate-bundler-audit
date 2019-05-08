@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+case "$CIRCLE_BRANCH" in
+  master)
+    make release # :latest
+    make release \
+     RELEASE_TAG="b$CIRCLE_BUILD_NUM"
+    ;;
+  *)
+    echo "Not releasing image from feature branches"
+    ;;
+esac
