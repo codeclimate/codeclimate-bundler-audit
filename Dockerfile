@@ -5,7 +5,7 @@ RUN adduser -u 9000 -D app
 WORKDIR /usr/src/app
 
 RUN apk add --no-cache ruby ruby-json git && \
-  gem install --no-ri --no-rdoc bundler && \
+  gem install --no-ri --no-rdoc bundler -v 2.0.2 && \
   rm -r ~/.gem
 
 COPY Gemfile* /usr/src/app/
