@@ -1,4 +1,4 @@
-.PHONY: image test citest update_version release
+.PHONY: image test citest update_database release
 
 IMAGE_NAME ?= codeclimate/codeclimate-bundler-audit
 RELEASE_REGISTRY ?= us.gcr.io/code_climate
