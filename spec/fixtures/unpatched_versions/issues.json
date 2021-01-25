@@ -1,380 +1,842 @@
 [
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2016-0751\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/9oLY_FCzvoc\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
-        },
-        "description": "Possible Object Leak and Denial of Service attack in Action Pack",
-        "fingerprint": "fb0889d061f06c4203ed27b43aca68b2",
-        "location": {
-            "lines": {
-                "begin": 18,
-                "end": 18
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8164\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/f6ioe4sdpbY\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
+      },
+      "description": "Possible Strong Parameters Bypass in ActionPack",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 18,
+          "end": 18
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "78a4885018f8aabe92f4379e4f60f218"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2016-2098\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ly-IH-fxr_Q\n\n**Solution**: upgrade to ~> 3.2.22.2, >= 4.2.5.2, ~> 4.2.5, >= 4.1.14.2, ~> 4.1.14"
-        },
-        "description": "Possible remote code execution vulnerability in Action Pack",
-        "fingerprint": "464176078b0d3514fdf527afe2f93315",
-        "location": {
-            "lines": {
-                "begin": 18,
-                "end": 18
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8166\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/NOjKiGeXUgw\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
+      },
+      "description": "Ability to forge per-form CSRF tokens given a global CSRF token",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 18,
+          "end": 18
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "a9a06e9af8587b22a5ae268eff1b1031"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-7576\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ANv0HDHEC3k\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
-        },
-        "description": "Timing attack vulnerability in basic authentication in Action Controller.",
-        "fingerprint": "98b8ca0112bff7bf79c1a85a829cf948",
-        "location": {
-          "lines": {
-              "begin": 18,
-              "end": 18
-          },
-          "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2016-0751\n\n**Criticality**: High\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/9oLY_FCzvoc\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
+      },
+      "description": "Possible Object Leak and Denial of Service attack in Action Pack",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 18,
+          "end": 18
+        }
+      },
+      "remediation_points": 50000,
+      "severity": "critical",
+      "type": "Issue",
+      "fingerprint": "fb0889d061f06c4203ed27b43aca68b2"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-7581\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/dthJ5wL69JE\n\n**Solution**: upgrade to >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
-        },
-        "description": "Object leak vulnerability for wildcard controller routes in Action Pack",
-        "fingerprint": "06ae795b91e09069846af543d755b9e1",
-        "location": {
-            "lines": {
-                "begin": 18,
-                "end": 18
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2015-7576\n\n**Criticality**: Low\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/ANv0HDHEC3k\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
+      },
+      "description": "Timing attack vulnerability in basic authentication in Action Controller.",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 18,
+          "end": 18
+        }
+      },
+      "remediation_points": 50000,
+      "severity": "info",
+      "type": "Issue",
+      "fingerprint": "98b8ca0112bff7bf79c1a85a829cf948"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2016-6316\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/I-VWr034ouk\n\n**Solution**: upgrade to ~> 4.2.7.1, ~> 4.2.8, >= 5.0.0.1"
-        },
-        "description": "Possible XSS Vulnerability in Action View",
-        "fingerprint": "f49fdfa41c42d6b18c17913156307c51",
-        "location": {
-            "lines": {
-                "begin": 25,
-                "end": 25
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 500000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8163\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/hWuKcHyoKh0\n\n**Solution**: upgrade to >= 4.2.11.2"
+      },
+      "description": "Potential remote code execution of user-provided local names in ActionView",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 25,
+          "end": 25
+        }
+      },
+      "remediation_points": 500000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "ad4668a40529720cccc51e8e9b5cd9d7"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2016-0752\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
-        },
-        "description": "Possible Information Leak Vulnerability in Action View",
-        "fingerprint": "f26c202060c497fd32f90c538c543445",
-        "location": {
-            "lines": {
-                "begin": 25,
-                "end": 25
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-5267\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/55reWMM_Pg8\n\n**Solution**: upgrade to >= 5.2.4.2, ~> 5.2.4, >= 6.0.2.2"
+      },
+      "description": "Possible XSS vulnerability in ActionView",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 25,
+          "end": 25
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "c383cabfd23792fc589cc77fe5bc4847"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2016-0753\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/6jQVC1geukQ\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
-        },
-        "description": "Possible Input Validation Circumvention in Active Model",
-        "fingerprint": "723fd12f6da25240ffbf2f3312b8e33d",
-        "location": {
-            "lines": {
-                "begin": 34,
-                "end": 34
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-15169\n\n**URL**: https://groups.google.com/g/rubyonrails-security/c/b-C9kSGXYrc\n\n**Solution**: upgrade to >= 5.2.4.4, ~> 5.2.4, >= 6.0.3.3"
+      },
+      "description": "Potential XSS vulnerability in Action View",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 25,
+          "end": 25
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "a71231986886e6444c17e9066648b237"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-7577\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/cawsWcQ6c8g\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
-        },
-        "description": "Nested attributes rejection proc bypass in Active Record",
-        "fingerprint": "2441a69a4af613e9235af4024ff21b30",
-        "location": {
-            "lines": {
-                "begin": 37,
-                "end": 37
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8167\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/x9DixQDG9a0\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
+      },
+      "description": "CSRF Vulnerability in rails-ujs",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 25,
+          "end": 25
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "0957edd6f83a850725f22714a000e2ae"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2016-6317\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/rgO20zYW33s\n\n**Solution**: upgrade to >= 4.2.7.1"
-        },
-        "description": "Unsafe Query Generation Risk in Active Record",
-        "fingerprint": "1e32b91522fc8bdf4def84929a11d4b6",
-        "location": {
-            "lines": {
-                "begin": 37,
-                "end": 37
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 500000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-5419\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/GN7w9fFAQeI\n\n**Solution**: upgrade to >= 6.0.0.beta3, >= 5.2.2.1, ~> 5.2.2, >= 5.1.6.2, ~> 5.1.6, >= 5.0.7.2, ~> 5.0.7, >= 4.2.11.1, ~> 4.2.11"
+      },
+      "description": "Denial of Service Vulnerability in Action View",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 25,
+          "end": 25
+        }
+      },
+      "remediation_points": 500000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "4eef2c6b3c9008238496929e5f46f631"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-8314\n\n**URL**: http://blog.plataformatec.com.br/2016/01/improve-remember-me-cookie-expiration-in-devise/\n\n**Solution**: upgrade to >= 3.5.4"
-        },
-        "description": "Devise Gem for Ruby Unauthorized Access Using Remember Me Cookie",
-        "fingerprint": "c1c5e720803020244d18bddad5f5f790",
-        "location": {
-            "lines": {
-                "begin": 51,
-                "end": 51
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 5000000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2016-0752\n\n**Criticality**: High\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/335P1DcLG00\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14"
+      },
+      "description": "Possible Information Leak Vulnerability in Action View",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 25,
+          "end": 25
+        }
+      },
+      "remediation_points": 50000,
+      "severity": "critical",
+      "type": "Issue",
+      "fingerprint": "f26c202060c497fd32f90c538c543445"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-1840\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/ruby-security-ann/XIZPbobuwaY\n\n**Solution**: upgrade to >= 4.0.4, ~> 3.1.3"
-        },
-        "description": "CSRF Vulnerability in jquery-rails",
-        "fingerprint": "20188b3cc82f969dea234989e92339d4",
-        "location": {
-            "lines": {
-                "begin": 63,
-                "end": 63
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 500000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-5418\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/pFRKI96Sm8Q\n\n**Solution**: upgrade to >= 4.2.11.1, ~> 4.2.11, >= 5.0.7.2, ~> 5.0.7, >= 5.1.6.2, ~> 5.1.6, >= 5.2.2.1, ~> 5.2.2, >= 6.0.0.beta3"
+      },
+      "description": "File Content Disclosure in Action View",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 25,
+          "end": 25
+        }
+      },
+      "remediation_points": 500000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "41228f376d01c71a58369a1d1e125133"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-8806\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1473\n\n**Solution**: upgrade to >= 1.6.8"
-        },
-        "description": "Denial of service or RCE from libxml2 and libxslt",
-        "fingerprint": "2675b3a139ad320ff6843f7dc5b9937e",
-        "location": {
-            "lines": {
-                "begin": 74,
-                "end": 74
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 500000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-16476\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/FL4dSdzr2zw\n\n**Solution**: upgrade to ~> 4.2.11, ~> 5.0.7.1, ~> 5.1.6.1, ~> 5.1.7, >= 5.2.1.1"
+      },
+      "description": "Broken Access Control vulnerability in Active Job",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 31,
+          "end": 31
+        }
+      },
+      "remediation_points": 500000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "b6a1d6b0830fd9cf155b2e606c289674"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-7499\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/forum/#!topic/ruby-security-ann/Dy7YiKb_pMM\n\n**Solution**: upgrade to >= 1.6.7.2"
-        },
-        "description": "Nokogiri gem contains a heap-based buffer overflow vulnerability in libxml2\n",
-        "fingerprint": "65fefc6b16a09d76d5c76b03247a48e1",
-        "location": {
-            "lines": {
-                "begin": 74,
-                "end": 74
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 50000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8165\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/bv6fW4S0Y1c\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
+      },
+      "description": "Potentially unintended unmarshalling of user-provided objects in MemCacheStore and RedisCacheStore",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 41,
+          "end": 41
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "3c2666c264fa6385a029dd06272a9cda"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-7578\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to >= 1.0.3"
-        },
-        "description": "Possible XSS vulnerability in rails-html-sanitizer",
-        "fingerprint": "b344012bca53e8faaafbf0f943776ea0",
-        "location": {
-            "lines": {
-                "begin": 97,
-                "end": 97
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 500000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-5421\n\n**Criticality**: Critical\n\n**URL**: https://github.com/plataformatec/devise/issues/4981\n\n**Solution**: upgrade to >= 4.6.0"
+      },
+      "description": "Devise Gem for Ruby Time-of-check Time-of-use race condition with lockable module",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 51,
+          "end": 51
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "eedf26b5d9448798d3e56cef5e84503c"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: CVE-2015-7580\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/uh--W4TDwmI\n\n**Solution**: upgrade to >= 1.0.3"
-        },
-        "description": "Possible XSS vulnerability in rails-html-sanitizer",
-        "fingerprint": "10818805098b10f2fe6e181f0961445c",
-        "location": {
-            "lines": {
-                "begin": 97,
-                "end": 97
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 500000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-16109\n\n**URL**: https://github.com/plataformatec/devise/issues/5071\n\n**Solution**: upgrade to >= 4.7.1"
+      },
+      "description": "Devise Gem for Ruby confirmation token validation with a blank string",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 51,
+          "end": 51
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "05be7757eb822a169ff03ebbb8601a98"
     },
     {
-        "categories": [
-            "Security"
-        ],
-        "check_name": "Insecure Dependency",
-        "content": {
-            "body": "**Advisory**: OSVDB-126747\n\n**URL**: https://github.com/mishoo/UglifyJS2/issues/751\n\n**Solution**: upgrade to >= 2.7.2"
-        },
-        "description": "uglifier incorrectly handles non-boolean comparisons during minification",
-        "fingerprint": "118e36b455317d002e7fde24873ecc40",
-        "location": {
-            "lines": {
-                "begin": 118,
-                "end": 118
-            },
-            "path": "Gemfile.lock"
-        },
-        "remediation_points": 5000000,
-        "severity": "normal",
-        "type": "Issue"
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2014-10077\n\n**URL**: https://github.com/svenfuchs/i18n/pull/289\n\n**Solution**: upgrade to >= 0.8.0"
+      },
+      "description": "i18n Gem for Ruby lib/i18n/core_ext/hash.rb Hash#slice() Function Hash Handling DoS",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 62,
+          "end": 62
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "ccdd791d1e7f65ff0a6094489851e3c8"
     },
-  {
-    "categories": [
-      "Security"
-    ],
-    "check_name": "Insecure Dependency",
-    "content": {
-      "body": "**Advisory**: CVE-2016-4658\n\n**Criticality**: High\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1615\n\n**Solution**: upgrade to >= 1.7.1"
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-11358\n\n**Criticality**: Medium\n\n**URL**: https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\n\n**Solution**: upgrade to >= 4.3.4"
+      },
+      "description": "Prototype pollution attack through jQuery $.extend",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 63,
+          "end": 63
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "034ba73b0594725fa4a7248eb9c627da"
     },
-    "description": "Nokogiri gem contains several vulnerabilities in libxml2 and libxslt",
-    "location": {
-      "path": "Gemfile.lock",
-      "lines": {
-        "begin": 74,
-        "end": 74
-      }
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-10663\n\n**URL**: https://www.ruby-lang.org/en/news/2020/03/19/json-dos-cve-2020-10663/\n\n**Solution**: upgrade to >= 2.3.0"
+      },
+      "description": "json Gem for Ruby Unsafe Object Creation Vulnerability (additional fix)",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 66,
+          "end": 66
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "0b4480599f3201c6c6b194af4c997956"
     },
-    "remediation_points": 5000000,
-    "severity": "critical",
-    "type": "Issue",
-    "fingerprint": "7cb910edbbeae3af56dcd8e4b7546bca"
-  },
-  {
-    "categories": [
-      "Security"
-    ],
-    "check_name": "Insecure Dependency",
-    "content": {
-      "body": "**Advisory**: CVE-2017-5029\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1634\n\n**Solution**: upgrade to >= 1.7.2"
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-16468\n\n**Criticality**: Medium\n\n**URL**: https://github.com/flavorjones/loofah/issues/154\n\n**Solution**: upgrade to >= 2.2.3"
+      },
+      "description": "Loofah XSS Vulnerability",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 67,
+          "end": 67
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "5cecc18606a58a4e7cc22f23f5eb5d29"
     },
-    "description": "Nokogiri gem contains two upstream vulnerabilities in libxslt 1.1.29",
-    "location": {
-      "path": "Gemfile.lock",
-      "lines": {
-        "begin": 74,
-        "end": 74
-      }
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-15587\n\n**Criticality**: Medium\n\n**URL**: https://github.com/flavorjones/loofah/issues/171\n\n**Solution**: upgrade to >= 2.3.1"
+      },
+      "description": "Loofah XSS Vulnerability",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 67,
+          "end": 67
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "33c919e1e2e14166e908ae664b423e45"
     },
-    "remediation_points": 5000000,
-    "severity": "normal",
-    "type": "Issue",
-    "fingerprint": "8c4f377661e37a9d29579335e6f0e5e4"
-  }
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-8048\n\n**URL**: https://github.com/flavorjones/loofah/issues/144\n\n**Solution**: upgrade to >= 2.2.1"
+      },
+      "description": "Loofah XSS Vulnerability",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 67,
+          "end": 67
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "38c7ab4446c6162a2e19c9e8567bcad9"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2016-4658\n\n**Criticality**: Critical\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1615\n\n**Solution**: upgrade to >= 1.7.1"
+      },
+      "description": "Nokogiri gem contains several vulnerabilities in libxml2 and libxslt",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "7cb910edbbeae3af56dcd8e4b7546bca"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-11068\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1892\n\n**Solution**: upgrade to >= 1.10.3"
+      },
+      "description": "Nokogiri gem, via libxslt, is affected by improper access control vulnerability",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "ddf4b1d8a7ff707b25a217dc84442b23"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-7595\n\n**Criticality**: High\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1992\n\n**Solution**: upgrade to >= 1.10.8"
+      },
+      "description": "libxml2 2.9.10 has an infinite loop in a certain end-of-file situation",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "critical",
+      "type": "Issue",
+      "fingerprint": "61931e34534772f32cb38e757ac574fc"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2017-16932\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1714\n\n**Solution**: upgrade to >= 1.8.1"
+      },
+      "description": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "b45634bc22366cea4554686cbec9129e"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-26247\n\n**Criticality**: Low\n\n**URL**: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vr8q-g5c7-m54m\n\n**Solution**: upgrade to >= 1.11.0.rc4"
+      },
+      "description": "Nokogiri::XML::Schema trusts input by default, exposing risk of an XXE vulnerability",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "info",
+      "type": "Issue",
+      "fingerprint": "bfff0fba3535efe1d25916f9256943c6"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-5477\n\n**Criticality**: Critical\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1915\n\n**Solution**: upgrade to >= 1.10.4"
+      },
+      "description": "Nokogiri Command Injection Vulnerability via Nokogiri::CSS::Tokenizer#load_file",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "97d1e03afa00ce0b7dc88df82c2857ca"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2017-15412\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1714\n\n**Solution**: upgrade to >= 1.8.2"
+      },
+      "description": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "47426d580c724add2953569681dd5c19"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2017-9050\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1673\n\n**Solution**: upgrade to >= 1.8.1"
+      },
+      "description": "Nokogiri gem, via libxml, is affected by DoS and RCE vulnerabilities",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "b487b42cd4f5dfd1b146d8c927995e13"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-14404\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1785\n\n**Solution**: upgrade to >= 1.8.5"
+      },
+      "description": "Nokogiri gem, via libxml2, is affected by multiple vulnerabilities",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "33e06bfa4b87756491fffbdbefedc711"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-13117\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1943\n\n**Solution**: upgrade to >= 1.10.5"
+      },
+      "description": "Nokogiri gem, via libxslt, is affected by multiple vulnerabilities",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "545d4cd6becce38244e72dad8572659a"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-8048\n\n**URL**: https://github.com/sparklemotion/nokogiri/pull/1746\n\n**Solution**: upgrade to >= 1.8.3"
+      },
+      "description": "Revert libxml2 behavior in Nokogiri gem that could cause XSS",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 74,
+          "end": 74
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "258a8343f029e025d691a6521247c460"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8161\n\n**URL**: https://groups.google.com/forum/#!topic/ruby-security-ann/T4ZIsfRf2eA\n\n**Solution**: upgrade to ~> 2.1.3, >= 2.2.0"
+      },
+      "description": "Directory traversal in Rack::Directory app bundled with Rack",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 77,
+          "end": 77
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "68d63d0367228127d6407e53337ae118"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8184\n\n**URL**: https://groups.google.com/g/rubyonrails-security/c/OWtmozPH9Ak\n\n**Solution**: upgrade to ~> 2.1.4, >= 2.2.3"
+      },
+      "description": "Percent-encoded cookies can be used to overwrite existing prefixed cookie names",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 77,
+          "end": 77
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "c39d03a3302d7c4a5b0f0af3853e5b47"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-16782\n\n**URL**: https://github.com/rack/rack/security/advisories/GHSA-hrqr-hxpp-chr3\n\n**Solution**: upgrade to ~> 1.6.12, >= 2.0.8"
+      },
+      "description": "Possible information leak / session hijack vulnerability",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 77,
+          "end": 77
+        }
+      },
+      "remediation_points": 500000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "437086269ff5f5cf3924d20f1d4a3379"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-16471\n\n**URL**: https://groups.google.com/forum/#!topic/ruby-security-ann/NAalCee8n6o\n\n**Solution**: upgrade to ~> 1.6.11, >= 2.0.6"
+      },
+      "description": "Possible XSS vulnerability in Rack",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 77,
+          "end": 77
+        }
+      },
+      "remediation_points": 500000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "8871de51535db252e8cd94ea6721ca1f"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-3741\n\n**URL**: https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ\n\n**Solution**: upgrade to >= 1.0.4"
+      },
+      "description": "XSS vulnerability in rails-html-sanitizer",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 97,
+          "end": 97
+        }
+      },
+      "remediation_points": 500000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "26e2c561d5414b37eb3c81ff87436aac"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2020-8130\n\n**Criticality**: High\n\n**URL**: https://github.com/advisories/GHSA-jppv-gw3r-w3q8\n\n**Solution**: upgrade to >= 12.3.3"
+      },
+      "description": "OS Command Injection in Rake",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 104,
+          "end": 104
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "critical",
+      "type": "Issue",
+      "fingerprint": "1fea5304b728c32640dfce9b591af0ab"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2019-16676\n\n**URL**: https://github.com/plataformatec/simple_form/security/advisories/GHSA-r74q-gxcg-73hx\n\n**Solution**: upgrade to >= 5.0"
+      },
+      "description": "simple_form Gem for Ruby Incorrect Access Control for forms based on user input",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 5,
+          "end": 5
+        }
+      },
+      "remediation_points": 50000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "476b228ea21585c269a00f68e54a4583"
+    },
+    {
+      "categories": [
+        "Security"
+      ],
+      "check_name": "Insecure Dependency",
+      "content": {
+        "body": "**Advisory**: CVE-2018-3760\n\n**URL**: https://groups.google.com/forum/#!topic/ruby-security-ann/2S9Pwz2i16k\n\n**Solution**: upgrade to < 3.0.0, >= 2.12.5, < 4.0.0, >= 3.7.2, >= 4.0.0.beta8"
+      },
+      "description": "Path Traversal in Sprockets",
+      "location": {
+        "path": "Gemfile.lock",
+        "lines": {
+          "begin": 107,
+          "end": 107
+        }
+      },
+      "remediation_points": 5000000,
+      "severity": "normal",
+      "type": "Issue",
+      "fingerprint": "a4055372fd258651bd13913d4bd1e82f"
+    }
 ]
