@@ -5,48 +5,6 @@
       ],
       "check_name": "Insecure Dependency",
       "content": {
-        "body": "**Advisory**: CVE-2020-8164\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/f6ioe4sdpbY\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
-      },
-      "description": "Possible Strong Parameters Bypass in ActionPack",
-      "location": {
-        "path": "Gemfile.lock",
-        "lines": {
-          "begin": 18,
-          "end": 18
-        }
-      },
-      "remediation_points": 50000000,
-      "severity": "normal",
-      "type": "Issue",
-      "fingerprint": "78a4885018f8aabe92f4379e4f60f218"
-    },
-    {
-      "categories": [
-        "Security"
-      ],
-      "check_name": "Insecure Dependency",
-      "content": {
-        "body": "**Advisory**: CVE-2020-8166\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/NOjKiGeXUgw\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
-      },
-      "description": "Ability to forge per-form CSRF tokens given a global CSRF token",
-      "location": {
-        "path": "Gemfile.lock",
-        "lines": {
-          "begin": 18,
-          "end": 18
-        }
-      },
-      "remediation_points": 50000000,
-      "severity": "normal",
-      "type": "Issue",
-      "fingerprint": "a9a06e9af8587b22a5ae268eff1b1031"
-    },
-    {
-      "categories": [
-        "Security"
-      ],
-      "check_name": "Insecure Dependency",
-      "content": {
         "body": "**Advisory**: CVE-2016-0751\n\n**Criticality**: High\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/9oLY_FCzvoc\n\n**Solution**: upgrade to >= 5.0.0.beta1.1, >= 4.2.5.1, ~> 4.2.5, >= 4.1.14.1, ~> 4.1.14, ~> 3.2.22.1"
       },
       "description": "Possible Object Leak and Denial of Service attack in Action Pack",
@@ -152,27 +110,6 @@
       ],
       "check_name": "Insecure Dependency",
       "content": {
-        "body": "**Advisory**: CVE-2020-8167\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/x9DixQDG9a0\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
-      },
-      "description": "CSRF Vulnerability in rails-ujs",
-      "location": {
-        "path": "Gemfile.lock",
-        "lines": {
-          "begin": 25,
-          "end": 25
-        }
-      },
-      "remediation_points": 50000000,
-      "severity": "normal",
-      "type": "Issue",
-      "fingerprint": "0957edd6f83a850725f22714a000e2ae"
-    },
-    {
-      "categories": [
-        "Security"
-      ],
-      "check_name": "Insecure Dependency",
-      "content": {
         "body": "**Advisory**: CVE-2019-5419\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/GN7w9fFAQeI\n\n**Solution**: upgrade to >= 6.0.0.beta3, >= 5.2.2.1, ~> 5.2.2, >= 5.1.6.2, ~> 5.1.6, >= 5.0.7.2, ~> 5.0.7, >= 4.2.11.1, ~> 4.2.11"
       },
       "description": "Denial of Service Vulnerability in Action View",
@@ -250,27 +187,6 @@
       "severity": "normal",
       "type": "Issue",
       "fingerprint": "b6a1d6b0830fd9cf155b2e606c289674"
-    },
-    {
-      "categories": [
-        "Security"
-      ],
-      "check_name": "Insecure Dependency",
-      "content": {
-        "body": "**Advisory**: CVE-2020-8165\n\n**URL**: https://groups.google.com/forum/#!topic/rubyonrails-security/bv6fW4S0Y1c\n\n**Solution**: upgrade to ~> 5.2.4.3, >= 6.0.3.1"
-      },
-      "description": "Potentially unintended unmarshalling of user-provided objects in MemCacheStore and RedisCacheStore",
-      "location": {
-        "path": "Gemfile.lock",
-        "lines": {
-          "begin": 41,
-          "end": 41
-        }
-      },
-      "remediation_points": 50000000,
-      "severity": "normal",
-      "type": "Issue",
-      "fingerprint": "3c2666c264fa6385a029dd06272a9cda"
     },
     {
       "categories": [
