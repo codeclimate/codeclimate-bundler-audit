@@ -25,7 +25,7 @@ module CC
             FileUtils.cp(gemfile_path, File.join(dir, GEMFILE))
 
             Dir.chdir(dir) do
-              Bundler::Audit::Scanner.new.scan do |vulnerability|
+              Bundler::Audit::Scanner.new.scan({ ignore: ignored_advisories }) do |vulnerability|
                 if (issue = issue_for_vulerability(vulnerability))
                   stdout.print("#{issue.to_json}\0")
                 else
@@ -71,6 +71,10 @@ module CC
             else
               {}
             end
+        end
+
+        def ignored_advisories
+          engine_config.fetch("config", {}).fetch("ignore", [])
         end
 
         def gemfile_lock_path

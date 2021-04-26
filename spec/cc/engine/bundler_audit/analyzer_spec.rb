@@ -18,6 +18,14 @@ module CC::Engine::BundlerAudit
         end
       end
 
+      it "ignores specified advisories" do
+        with_written_config(config: { ignore: %w[CVE-2016-0751 CVE-2015-7576] }) do |path|
+          directory = fixture_directory("ignore")
+          issues = analyze_directory(directory, engine_config_path: path)
+          expect(expected_issues("ignore")).to be_present_in(issues)
+        end
+      end
+
       it "emits issues for unpatched gems in Gemfile.lock" do
         with_default_written_config do |path|
           directory = fixture_directory("unpatched_versions")
