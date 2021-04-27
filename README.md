@@ -25,6 +25,20 @@ plugins:
       path: optional/path/to/Gemfile.lock
 ```
 
+In the same way you can ignore certain advisories that have been manually resolved:
+
+```yml
+# .codeclimate.yml
+plugins:
+  bunlder-audit:
+    enabled: true
+    config:
+      ignore:
+        - CVE-YYYY-XXXX
+```
+
+* `ignore:` \[Array\<String\>\] - A list of advisory IDs to ignore.
+
 ### Updating the vulnerability database
 
 If you want to update the vulnerability database, run
