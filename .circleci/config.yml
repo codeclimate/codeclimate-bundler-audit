@@ -11,14 +11,21 @@ jobs:
       - run: make test
 
   release_images:
-    docker:
-      - image: circleci/python:latest
+    machine:
+      docker_layer_caching: true
+    working_directory: ~/codeclimate/codeclimate-bundler-audit
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - run: docker login -u _json_key -p "$GCR_JSON_KEY" us.gcr.io
+      - run:
+          name: Validate owner
+          command: |
+            if [ "$CIRCLE_PROJECT_USERNAME" -ne "codeclimate" ]
+            then
+              echo "Skipping release for non-codeclimate branches"
+              circleci step halt
+            fi
       - run: make image
+      - run: echo "$GCR_JSON_KEY" | docker login -u _json_key --password-stdin us.gcr.io
       - run: bin/deploy
 
 
@@ -30,6 +37,9 @@ workflows:
       - release_images:
           requires:
             - build_and_test
+          filters:
+            branches:
+              only: /master|channel\/[\w-]+/
 notify:
   webhooks:
     - url: https://cc-slack-proxy.herokuapp.com/circle
