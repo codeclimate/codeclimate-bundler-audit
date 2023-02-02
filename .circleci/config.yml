@@ -1,10 +1,17 @@
 version: 2
+init: &init
+  run:
+    name: init
+    command: |
+      echo '. .circleci/shared.bash' >> "$BASH_ENV"
+      . .circleci/shared.bash
 jobs:
   build_and_test:
     docker:
       - image: circleci/python:latest
     steps:
       - checkout
+      - *init
       - setup_remote_docker:
           docker_layer_caching: true
       - run: make test-image
@@ -27,6 +34,7 @@ jobs:
       - run: make image
       - run: echo "$GCR_JSON_KEY" | docker login -u _json_key --password-stdin us.gcr.io
       - run: bin/deploy
+      - run: send_webhook
 
 
 workflows:
@@ -41,6 +49,3 @@ workflows:
           filters:
             branches:
               only: /master|channel\/[\w-]+/
-notify:
-  webhooks:
-    - url: https://cc-slack-proxy.herokuapp.com/circle
