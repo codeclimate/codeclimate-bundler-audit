@@ -32,6 +32,7 @@ jobs:
               circleci step halt
             fi
       - run: make image
+      - run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - run: bin/deploy
       - run: send_webhook
 
