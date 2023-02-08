@@ -11,7 +11,6 @@ case "$CIRCLE_BRANCH" in
     make release
     make release \
      RELEASE_TAG="b$CIRCLE_BUILD_NUM"
-    ;;
     make release \
      RELEASE_TAG="$(echo $CIRCLE_BRANCH | grep -oP 'channel/\K[\w\-]+')"
     ;;
