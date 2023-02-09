@@ -8,7 +8,6 @@ case "$CIRCLE_BRANCH" in
      RELEASE_TAG="b$CIRCLE_BUILD_NUM"
     ;;
   channel/*)
-    make release
     make release \
      RELEASE_TAG="b$CIRCLE_BUILD_NUM"
     make release \
