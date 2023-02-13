@@ -2,8 +2,11 @@
 
 IMAGE_NAME ?= codeclimate/codeclimate-bundler-audit
 RELEASE_REGISTRY ?= codeclimate
-RELEASE_TAG ?= latest
 TEST_IMAGE_NAME ?= $(IMAGE_NAME)-test
+
+ifndef RELEASE_TAG
+override RELEASE_TAG = latest
+endif
 
 image:
 	docker build --rm -t $(IMAGE_NAME) .
