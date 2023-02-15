@@ -7,6 +7,12 @@ case "$CIRCLE_BRANCH" in
     make release \
      RELEASE_TAG="b$CIRCLE_BUILD_NUM"
     ;;
+  channel/*)
+    make release \
+     RELEASE_TAG="b$CIRCLE_BUILD_NUM"
+    make release \
+     RELEASE_TAG="$(echo $CIRCLE_BRANCH | grep -oP 'channel/\K[\w\-]+')"
+    ;;
   *)
     echo "Not releasing image from feature branches"
     ;;

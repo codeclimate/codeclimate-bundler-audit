@@ -1,9 +1,12 @@
 .PHONY: image test citest update_database release
 
 IMAGE_NAME ?= codeclimate/codeclimate-bundler-audit
-RELEASE_REGISTRY ?= us.gcr.io/code_climate
-RELEASE_TAG ?= latest
+RELEASE_REGISTRY ?= codeclimate
 TEST_IMAGE_NAME ?= $(IMAGE_NAME)-test
+
+ifndef RELEASE_TAG
+override RELEASE_TAG = latest
+endif
 
 image:
 	docker build --rm -t $(IMAGE_NAME) .
