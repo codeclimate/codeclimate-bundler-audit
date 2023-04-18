@@ -761,7 +761,7 @@
     ],
     "check_name": "Insecure Dependency",
     "content": {
-      "body": "**Advisory**: CVE-2019-11068\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1892\n\n**Solution**: upgrade to >= 1.10.3"
+      "body": "**Advisory**: CVE-2019-11068\n\n**Criticality**: Critical\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1892\n\n**Solution**: upgrade to >= 1.10.3"
     },
     "description": "Nokogiri gem, via libxslt, is affected by improper access control vulnerability",
     "location": {
@@ -1391,7 +1391,7 @@
     ],
     "check_name": "Insecure Dependency",
     "content": {
-      "body": "**Advisory**: CVE-2018-3741\n\n**URL**: https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ\n\n**Solution**: upgrade to >= 1.0.4"
+      "body": "**Advisory**: CVE-2018-3741\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ\n\n**Solution**: upgrade to >= 1.0.4"
     },
     "description": "XSS vulnerability in rails-html-sanitizer",
     "location": {
@@ -1601,7 +1601,7 @@
     ],
     "check_name": "Insecure Dependency",
     "content": {
-      "body": "**Advisory**: OSVDB-126747\n\n**URL**: https://github.com/mishoo/UglifyJS2/issues/751\n\n**Solution**: upgrade to >= 2.7.2"
+      "body": "**Advisory**: CVE-2015-8857\n\n**Criticality**: Critical\n\n**URL**: https://github.com/mishoo/UglifyJS2/issues/751\n\n**Solution**: upgrade to >= 2.7.2"
     },
     "description": "uglifier incorrectly handles non-boolean comparisons during minification",
     "location": {
@@ -1614,6 +1614,342 @@
     "remediation_points": 5000000,
     "severity": "normal",
     "type": "Issue",
-    "fingerprint": "118e36b455317d002e7fde24873ecc40"
+    "fingerprint": "41073440f7e5459b7ce75b4650ae84ca"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2023-22795\n\n**URL**: https://github.com/rails/rails/releases/tag/v7.0.4.1\n\n**Solution**: upgrade to >= 5.2.8.15, ~> 5.2.8, >= 6.1.7.1, ~> 6.1.7, >= 7.0.4.1"
+    },
+    "description": "ReDoS based DoS vulnerability in Action Dispatch",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 18,
+        "end": 18
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "34c48776212c34509c1a2e698bd88fea"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2023-22792\n\n**URL**: https://github.com/rails/rails/releases/tag/v7.0.4.1\n\n**Solution**: upgrade to >= 5.2.8.15, ~> 5.2.8, >= 6.1.7.1, ~> 6.1.7, >= 7.0.4.1"
+    },
+    "description": "ReDoS based DoS vulnerability in Action Dispatch",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 18,
+        "end": 18
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "ff1fe8568091325da7b86b5fb44ad9e4"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2022-44566\n\n**Criticality**: High\n\n**URL**: https://github.com/rails/rails/releases/tag/v7.0.4.1\n\n**Solution**: upgrade to >= 5.2.8.15, ~> 5.2.8, >= 6.1.7.1, ~> 6.1.7, >= 7.0.4.1"
+    },
+    "description": "Denial of Service Vulnerability in ActiveRecord’s PostgreSQL adapter",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 37,
+        "end": 37
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "critical",
+    "type": "Issue",
+    "fingerprint": "51314a7d8eff88721aadbcc7c23b4e70"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2023-28120\n\n**URL**: https://discuss.rubyonrails.org/t/cve-2023-28120-possible-xss-security-vulnerability-in-safebuffer-bytesplice/82469\n\n**Solution**: upgrade to >= 6.1.7.3, ~> 6.1.7, >= 7.0.4.3"
+    },
+    "description": "Possible XSS Security Vulnerability in SafeBuffer#bytesplice",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 41,
+        "end": 41
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "82e96f36ee9dce27473763359a873340"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2023-22796\n\n**URL**: https://github.com/rails/rails/releases/tag/v7.0.4.1\n\n**Solution**: upgrade to >= 5.2.8.15, ~> 5.2.8, >= 6.1.7.1, ~> 6.1.7, >= 7.0.4.1"
+    },
+    "description": "ReDoS based DoS vulnerability in Active Support’s underscore",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 41,
+        "end": 41
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "62f6d4b181d9e2717d6aa2f56ce918d6"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2023-22799\n\n**URL**: https://github.com/rails/globalid/releases/tag/v1.0.1\n\n**Solution**: upgrade to >= 1.0.1"
+    },
+    "description": "ReDoS based DoS vulnerability in GlobalID",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 60,
+        "end": 60
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "31df06f525bcbe0c5c3bfc6e3448d952"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2019-11068\n\n**Criticality**: Critical\n\n**URL**: https://github.com/sparklemotion/nokogiri/issues/1892\n\n**Solution**: upgrade to >= 1.10.3"
+    },
+    "description": "Nokogiri gem, via libxslt, is affected by improper access control vulnerability",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 74,
+        "end": 74
+      }
+    },
+    "remediation_points": 5000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "ddf4b1d8a7ff707b25a217dc84442b23"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2019-13118\n\n**Criticality**: High\n\n**URL**: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=15069\n\n**Solution**: upgrade to >= 1.10.5"
+    },
+    "description": "libxslt Type Confusion vulnerability that affects Nokogiri",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 74,
+        "end": 74
+      }
+    },
+    "remediation_points": 5000000,
+    "severity": "critical",
+    "type": "Issue",
+    "fingerprint": "f40ada90236659a0b6d9fb2dcd8e2f9c"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2021-3517\n\n**Criticality**: High\n\n**URL**: https://bugzilla.redhat.com/show_bug.cgi?id=1954232\n\n**Solution**: upgrade to >= 1.11.4"
+    },
+    "description": "Nokogiri contains libxml Out-of-bounds Write vulnerability",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 74,
+        "end": 74
+      }
+    },
+    "remediation_points": 5000000,
+    "severity": "critical",
+    "type": "Issue",
+    "fingerprint": "9990701c9580789f495aa331bc998cf7"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2022-44572\n\n**URL**: https://github.com/rack/rack/releases/tag/v3.0.4.1\n\n**Solution**: upgrade to >= 2.0.9.2, ~> 2.0.9, >= 2.1.4.2, ~> 2.1.4, >= 2.2.6.1, ~> 2.2.6, >= 3.0.4.1"
+    },
+    "description": "Denial of service via multipart parsing in Rack",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 77,
+        "end": 77
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "241fff017b77ca0be0a6869906929fe0"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2023-27539\n\n**URL**: https://discuss.rubyonrails.org/t/cve-2023-27539-possible-denial-of-service-vulnerability-in-racks-header-parsing/82466\n\n**Solution**: upgrade to >= 2.2.6.4, ~> 2.0, >= 3.0.6.1"
+    },
+    "description": "Possible Denial of Service Vulnerability in Rack’s header parsing",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 77,
+        "end": 77
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "6c459da8709a37020494362a511a0028"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2022-44571\n\n**URL**: https://github.com/rack/rack/releases/tag/v3.0.4.1\n\n**Solution**: upgrade to >= 2.0.9.2, ~> 2.0.9, >= 2.1.4.2, ~> 2.1.4, >= 2.2.6.1, ~> 2.2.6, >= 3.0.4.1"
+    },
+    "description": "Denial of Service Vulnerability in Rack Content-Disposition parsing",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 77,
+        "end": 77
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "27e19cc615c962fbb08c28c8ddc2f665"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2022-44570\n\n**URL**: https://github.com/rack/rack/releases/tag/v3.0.4.1\n\n**Solution**: upgrade to >= 2.0.9.2, ~> 2.0.9, >= 2.1.4.2, ~> 2.1.4, >= 2.2.6.2, ~> 2.2.6, >= 3.0.4.1"
+    },
+    "description": "Denial of service via header parsing in Rack",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 77,
+        "end": 77
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "b02f6b7cdf4d1faef481e232f9b5c8f9"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2023-27530\n\n**Criticality**: High\n\n**URL**: https://discuss.rubyonrails.org/t/cve-2023-27530-possible-dos-vulnerability-in-multipart-mime-parsing/82388\n\n**Solution**: upgrade to >= 2.0.9.3, ~> 2.0.9, >= 2.1.4.3, ~> 2.1.4, >= 2.2.6.3, ~> 2.2.6, >= 3.0.4.2"
+    },
+    "description": "Possible DoS Vulnerability in Multipart MIME parsing",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 77,
+        "end": 77
+      }
+    },
+    "remediation_points": 50000000,
+    "severity": "critical",
+    "type": "Issue",
+    "fingerprint": "b4fb672a3500d8e00c4b248160a82a48"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2018-3741\n\n**Criticality**: Medium\n\n**URL**: https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ\n\n**Solution**: upgrade to >= 1.0.4"
+    },
+    "description": "XSS vulnerability in rails-html-sanitizer",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 97,
+        "end": 97
+      }
+    },
+    "remediation_points": 500000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "26e2c561d5414b37eb3c81ff87436aac"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: CVE-2015-8857\n\n**Criticality**: Critical\n\n**URL**: https://github.com/mishoo/UglifyJS2/issues/751\n\n**Solution**: upgrade to >= 2.7.2"
+    },
+    "description": "uglifier incorrectly handles non-boolean comparisons during minification",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 118,
+        "end": 118
+      }
+    },
+    "remediation_points": 5000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "41073440f7e5459b7ce75b4650ae84ca"
   }
 ]
