@@ -551,7 +551,7 @@
     ],
     "check_name": "Insecure Dependency",
     "content": {
-      "body": "**Advisory**: CVE-2014-10077\n\n**URL**: https://github.com/svenfuchs/i18n/pull/289\n\n**Solution**: upgrade to >= 0.8.0"
+      "body": "**Advisory**: CVE-2014-10077\n\n**Criticality**: High\n\n**URL**: https://github.com/svenfuchs/i18n/pull/289\n\n**Solution**: upgrade to >= 0.8.0"
     },
     "description": "i18n Gem for Ruby lib/i18n/core_ext/hash.rb Hash#slice() Function Hash Handling DoS",
     "location": {
@@ -562,30 +562,9 @@
       }
     },
     "remediation_points": 5000000,
-    "severity": "normal",
+    "severity": "critical",
     "type": "Issue",
     "fingerprint": "ccdd791d1e7f65ff0a6094489851e3c8"
-  },
-  {
-    "categories": [
-      "Security"
-    ],
-    "check_name": "Insecure Dependency",
-    "content": {
-      "body": "**Advisory**: CVE-2019-11358\n\n**Criticality**: Medium\n\n**URL**: https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\n\n**Solution**: upgrade to >= 4.3.4"
-    },
-    "description": "Prototype pollution attack through jQuery $.extend",
-    "location": {
-      "path": "Gemfile.lock",
-      "lines": {
-        "begin": 63,
-        "end": 63
-      }
-    },
-    "remediation_points": 50000000,
-    "severity": "normal",
-    "type": "Issue",
-    "fingerprint": "034ba73b0594725fa4a7248eb9c627da"
   },
   {
     "categories": [
@@ -1951,5 +1930,26 @@
     "severity": "normal",
     "type": "Issue",
     "fingerprint": "41073440f7e5459b7ce75b4650ae84ca"
+  },
+  {
+    "categories": [
+      "Security"
+    ],
+    "check_name": "Insecure Dependency",
+    "content": {
+      "body": "**Advisory**: \n\n**URL**: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-pxvg-2qj5-37jq\n\n**Solution**: upgrade to >= 1.14.3"
+    },
+    "description": "Update packaged libxml2 to v2.10.4 to resolve multiple CVEs",
+    "location": {
+      "path": "Gemfile.lock",
+      "lines": {
+        "begin": 74,
+        "end": 74
+      }
+    },
+    "remediation_points": 5000000,
+    "severity": "normal",
+    "type": "Issue",
+    "fingerprint": "64e79db20fb8c8cffc2f60f37ebe546a"
   }
 ]
