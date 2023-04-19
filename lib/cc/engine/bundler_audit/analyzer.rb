@@ -26,6 +26,7 @@ module CC
 
             Dir.chdir(dir) do
               Bundler::Audit::Scanner.new.scan(ignore: ignored_advisories) do |vulnerability|
+                # binding.pry if ignored_advisories.count > 0
                 if (issue = issue_for_vulerability(vulnerability))
                   stdout.print("#{issue.to_json}\0")
                 else
@@ -42,9 +43,9 @@ module CC
 
         def issue_for_vulerability(vulnerability)
           case vulnerability
-          when Bundler::Audit::Scanner::UnpatchedGem
+          when Bundler::Audit::Results::UnpatchedGem
             UnpatchedGemIssue.new(vulnerability, gemfile_lock_relative_path, gemfile_lock_lines)
-          when Bundler::Audit::Scanner::InsecureSource
+          when Bundler::Audit::Results::InsecureSource
             InsecureSourceIssue.new(vulnerability, gemfile_lock_relative_path, gemfile_lock_lines)
           end
         end
