@@ -1,54 +1,31 @@
-# Code Climate bundler-audit Engine
+# Try Qlty today, the newest edition of Code Climate Quality.
+#### This repository is deprecated and archived.
 
-[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate-bundler-audit/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate-bundler-audit)
+This is a repository for a Code Climate Quality plugin which is packaged as a Docker image.
 
-`codeclimate-bundler-audit` is a Code Climate engine that wraps [bundler-audit](https://github.com/rubysec/bundler-audit). You can run it on your command line using the Code Climate CLI, or on our hosted analysis platform.
+Code Climate Quality is being replaced with the new [Qlty](qlty.sh) code quality platform. Qlty uses a new plugin system which does not require packaging plugins as Docker images.
 
-bundler-audit offers patch-level verification for [Bundler](http://bundler.io/).
+As a result, this repository is no longer maintained and has been archived.
 
-### Installation
+## Advantages of Qlty plugins
+The new Qlty plugins system provides key advantages over the older, Docker-based plugin system:
 
-1. If you haven't already, [install the Code Climate CLI](https://github.com/codeclimate/codeclimate).
-2. Run `codeclimate engines:enable bundler-audit`. This command both installs the engine and enables it in your `.codeclimate.yml` file.
-3. You're ready to analyze! Browse into your project's folder and run `codeclimate analyze`.
+- Linting runs much faster without the overhead of virtualization
+- New versions of linters are available immediately without needing to wait for a re-packaged release
+- Plugins can be run with any arbitrary extensions (like extra rules and configs) without requiring pre-packaging
+- Eliminates security issues associated with exposing a Docker daemon
 
-### Configuration
+## Try out Qlty today free
 
-By default, bundler-audit will look for a `Gemfile.lock` file in the root of
-your project. Optionally configure Code Climate to look at a different path:
+[Qlty CLI](https://docs.qlty.sh/cli/quickstart) is the fastest linter and auto-formatter for polyglot teams. It is completely free and available for Mac, Windows, and Linux.
 
-```yml
-plugins:
-  bundler-audit:
-    enabled: true
-    config:
-      path: optional/path/to/Gemfile.lock
-```
+  - Install Qlty CLI:
+`
+curl https://qlty.sh | sh # Mac or Linux
+`
+or ` <windows install line> `
+  
+[Qlty Cloud](https://docs.qlty.sh/cloud/quickstart) is a full code health platform for integrating code quality into development team workflows. It is free for unlimited private contributors.
+  - [Try Qlty Cloud today](https://docs.qlty.sh/cloud/quickstart)
 
-In the same way you can ignore certain advisories that have been manually resolved:
-
-```yml
-# .codeclimate.yml
-plugins:
-  bunlder-audit:
-    enabled: true
-    config:
-      ignore:
-        - CVE-YYYY-XXXX
-```
-
-* `ignore:` \[Array\<String\>\] - A list of advisory IDs to ignore.
-
-### Updating the vulnerability database
-
-If you want to update the vulnerability database, run
-
-```console
-make update_database
-```
-
-### Need help?
-
-For help with bundler-audit, [check out their documentation](https://github.com/rubysec/bundler-audit).
-
-If you're running into a Code Climate issue, first look over this project's [GitHub Issues](https://github.com/codeclimate/bundler-audit/issues), as your question may have already been covered. If not, [go ahead and open a support ticket with us](https://codeclimate.com/help).
+**Note**: For existing customers of Quality, please see our [Migration Guide](https://docs.qlty.sh/migration/guide) for more information and resources.
